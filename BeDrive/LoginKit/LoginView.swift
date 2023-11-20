@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import APIClient
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
@@ -42,21 +43,18 @@ struct LoginView: View {
         .background(Color.accentColor)
         .cornerRadius(5)    }
     
-    fileprivate func UserInfo() -> some View {
-        VStack{
-            Text("First Name: \(viewModel.currentUser?.firstName ?? "none")")
-            Text("Last Name: \(viewModel.currentUser?.lastName ?? "none")")
-        }
+    fileprivate func TitleView() -> some View {
+        Text("BeDrive://")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .foregroundStyle(Color.white)
         
     }
     
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("BeDrive://")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
+            TitleView()
             Spacer()
             VStack {
                 EmailInput()
@@ -77,14 +75,10 @@ struct LoginView: View {
         } message: {
             Text(viewModel.errorMessage)
         }
-//        .alert("Logged In", isPresented: $viewModel.isLoggedIn) {
-//        } message: {
-//            Text("Yayyy")
-//        }
     }
 }
 
 #Preview {
-    let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: APIClient()))
+    let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: BaseAPIClient()))
     return LoginView(viewModel: viewModel)
 }

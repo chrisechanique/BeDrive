@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import DataCache
+import APIClient
 
 protocol Authentication {
     func login(with userName: String, password: String) async throws -> UserSession
@@ -83,11 +85,31 @@ actor BeDriveRepository: FileRepository, Authentication {
     
     internal var fileStores = [String : FileStore]()
     internal var dataCache = DataCache()
-    private let apiClient: APIClientProtocol
+    private let apiClient: APIClient
     private var credentials: BeDriveAPIEndpoint.Credentials?
     private var userSession: UserSession?
     
-    init(apiClient: APIClientProtocol) {
+    enum RepositoryError: Error {
+        case unknownError
+        case noCredentials
+        case invalidFileItem
+        case missingFileStore
+        
+        var localizedDescription: String {
+            switch self {
+            case .unknownError:
+                return "An unknown error occurred."
+            case .noCredentials:
+                return "Credentials are required for requests"
+            case .invalidFileItem:
+                return "File item does not have valid data"
+            case .missingFileStore:
+                return "File store is missing for file"
+            }
+        }
+    }
+    
+    init(apiClient: APIClient) {
         self.apiClient = apiClient
     }
     
@@ -108,7 +130,7 @@ actor BeDriveRepository: FileRepository, Authentication {
     }
     
     func fetchFiles(in folder: Folder) async throws -> FileStore {
-        guard let credentials else { throw NetworkError.authenticationError }
+        guard let credentials else { throw RepositoryError.noCredentials }
         let items = try await apiClient.request(BeDriveAPIEndpoint.listFolderContent(id: folder.id, credentials: credentials)) as [BeDriveAPIEndpoint.Item]
         let files = items.compactMap { $0.mapToFilableItem() }
         
@@ -128,7 +150,7 @@ actor BeDriveRepository: FileRepository, Authentication {
     }
     
     func createFolder(named name: String, in parentFolder: Folder) async throws -> Folder {
-        guard let credentials else { throw NetworkError.authenticationError }
+        guard let credentials else { throw RepositoryError.noCredentials }
         let item = try await apiClient.request(BeDriveAPIEndpoint.createFolder(id: parentFolder.id, folderName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
         let newFolder = Folder(id: item.id, name: item.name, modificationDate: item.modificationDate, parentId: item.parentId)
         
@@ -142,7 +164,7 @@ actor BeDriveRepository: FileRepository, Authentication {
         if let data = await dataCache.loadData(for: dataItem.id) {
             return data
         }
-        guard let credentials else { throw NetworkError.authenticationError }
+        guard let credentials else { throw RepositoryError.noCredentials }
         
         do {
             let data = try await apiClient.downloadData(from: BeDriveAPIEndpoint.downloadItem(id: dataItem.id, credentials: credentials))
@@ -154,10 +176,10 @@ actor BeDriveRepository: FileRepository, Authentication {
     }
     
     func createDataItem(in folder: Folder, name: String, data: Data) async throws -> DataItem {
-        guard let credentials else { throw NetworkError.authenticationError }
+        guard let credentials else { throw RepositoryError.noCredentials }
         let item = try await apiClient.upload(data, to: BeDriveAPIEndpoint.createItem(folderId: folder.id, itemName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
         guard let dataItem = item.mapToFilableItem() as? DataItem else {
-            throw DefaultNetworkError.unknownError
+            throw RepositoryError.invalidFileItem
         }
         
         // Update store with new file
@@ -167,7 +189,7 @@ actor BeDriveRepository: FileRepository, Authentication {
     }
     
     func deleteItem(_ item: FileItem) async throws {
-        guard let credentials else { throw NetworkError.authenticationError }
+        guard let credentials else { throw RepositoryError.noCredentials }
         do {
             _ = try await apiClient.request(BeDriveAPIEndpoint.deleteItem(id: item.id, credentials: credentials)) as BeDriveAPIEndpoint.Item
         } catch {
@@ -177,12 +199,12 @@ actor BeDriveRepository: FileRepository, Authentication {
         // Delete file from store if it exists
         guard let parentId = item.parentId else {
             // Attempting to delete file without parent folder
-            throw DefaultNetworkError.unknownError
+            throw RepositoryError.invalidFileItem
         }
         
         guard let fileStore = fileStores[parentId] else {
             // Attempting to delete file without file store
-            throw DefaultNetworkError.unknownError
+            throw RepositoryError.missingFileStore
         }
         
         await fileStore.delete(item)

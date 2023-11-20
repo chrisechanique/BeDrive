@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AsyncTextView: View {
-    private let viewModel: LoadableViewModel<String>
+public struct AsyncTextView: View {
+    private let viewModel: AsyncLoadableViewModel<String>
 
-    init(loadTask: @escaping () async throws -> String) {
-        self.viewModel = LoadableViewModel(fetchData: loadTask)
+    public init(loadTask: @escaping () async throws -> String) {
+        self.viewModel = AsyncLoadableViewModel(fetchData: loadTask)
     }
 
-    var body: some View {
+    public var body: some View {
         AsyncLoadableView(viewModel: viewModel) {
             if let text = viewModel.data {
                 VStack(alignment: .leading) {
@@ -36,7 +36,7 @@ struct AsyncTextView_Previews: PreviewProvider {
         // Sample data for preview
         let text = "Hello, this is a text file content."
         AsyncTextView {
-            try await Task.sleep(until: .now + .seconds(1))
+            try await Task.sleep(nanoseconds: 2_000_000_000)
             return text
         }
     }

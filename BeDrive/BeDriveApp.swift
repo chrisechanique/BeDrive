@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import APIClient
 
 @main
 struct BeDriveApp: App {
     var body: some Scene {
         WindowGroup {
-            let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: APIClient()))
+            let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: BaseAPIClient()))
             LoginView(viewModel: viewModel)
         }
     }

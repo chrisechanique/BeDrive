@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AsyncView
 
 class FileGridViewModel: ObservableObject, DataLoadable {
     @MainActor @Published var fileItems: [FileItem] = []

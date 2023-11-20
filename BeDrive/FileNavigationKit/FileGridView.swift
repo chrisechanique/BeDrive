@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AsyncView
+import APIClient
 
 struct FileGridView: View {
     @ObservedObject var viewModel: FileGridViewModel
@@ -203,7 +205,7 @@ extension FileGridViewModel {
 #Preview {
     let folder = Folder(id: "1", name: "Documents", modificationDate: Date.now, parentId: nil)
     let user = User(firstName: "noel", lastName: "smith", userName: "noel", password: "foobar", rootFolder: folder)
-    let viewModel = FileNavigationViewModel(currentUser: user, repository: BeDriveRepository(apiClient: APIClient()))
+    let viewModel = FileNavigationViewModel(currentUser: user, repository: BeDriveRepository(apiClient: BaseAPIClient()))
     
     return FileNavigationView(viewModel: viewModel)
 }

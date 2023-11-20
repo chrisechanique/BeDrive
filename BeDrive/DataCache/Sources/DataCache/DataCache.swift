@@ -7,28 +7,30 @@
 import Foundation
 
 // A thread-safe actor class for caching Data objects using NSCache
-actor DataCache {
+public actor DataCache {
     // The NSCache instance to store NSData objects with NSString keys
     private var cache = NSCache<NSString, NSData>()
+    
+    public init() {}
 
     // Async function to fetch data from the cache for a given ID
-    func loadData(for id: String) async -> Data? {
+    public func loadData(for id: String) async -> Data? {
         return await object(for: id)
     }
 
     // Async function to store data in the cache for a given ID
-    func store(_ data: Data, for id: String) async {
+    public func store(_ data: Data, for id: String) async {
         return await set(object: data, for: id)
     }
 
     // Async function to remove data from the cache for a given ID
-    func remove(for id: String) async {
+    public func remove(for id: String) async {
         let nsKey = NSString(string: id)
         self.cache.removeObject(forKey: nsKey)
     }
     
     // Async function to clear all data from the cache
-    func clearAll() async {
+    public func clearAll() async {
         self.cache.removeAllObjects()
     }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BeDriveAPIEndpoint: APIEndpoint {
+public enum BeDriveAPIEndpoint: APIEndpoint {
     case currentUser(credentials: Credentials)
     case listFolderContent(id: String, credentials: Credentials)
     case createItem(folderId: String, itemName: String, credentials: Credentials)
@@ -15,24 +15,25 @@ enum BeDriveAPIEndpoint: APIEndpoint {
     case deleteItem(id: String, credentials: Credentials)
     case downloadItem(id: String, credentials: Credentials)
     
-    var path: String {
+    public var path: String {
+        let baseUrl = "http://163.172.147.216:8080"
         switch self {
         case .currentUser:
-            return "/me"
+            return baseUrl + "/me"
         case .listFolderContent(let id, _):
-            return "/items/\(id)"
+            return baseUrl + "/items/\(id)"
         case .createItem(let id, _, _):
-            return "/items/\(id)"
+            return baseUrl + "/items/\(id)"
         case .createFolder(let id, _, _):
-            return "/items/\(id)"
+            return baseUrl + "/items/\(id)"
         case .deleteItem(let id, _):
-            return "/items/\(id)"
+            return baseUrl + "/items/\(id)"
         case .downloadItem(let id, _):
-            return "/items/\(id)/data"
+            return baseUrl + "/items/\(id)/data"
         }
     }
     
-    var method: HTTPMethod {
+    public var method: HTTPMethod {
         switch self {
         case .currentUser:
             return .GET
@@ -49,7 +50,7 @@ enum BeDriveAPIEndpoint: APIEndpoint {
         }
     }
     
-    var headers: [String: String]? {
+    public var headers: [String: String]? {
         switch self {
         case .createItem(_, let itemName, _):
             return ["Content-Type": "application/octet-stream", "Content-Disposition": "attachment;filename*=utf-8''\(itemName)"]
@@ -60,7 +61,7 @@ enum BeDriveAPIEndpoint: APIEndpoint {
         }
     }
     
-    var parameters: [String: String]? {
+    public var parameters: [String: String]? {
         switch self {
         case .createFolder(_, let itemName, _):
             return ["name": itemName]
@@ -69,11 +70,11 @@ enum BeDriveAPIEndpoint: APIEndpoint {
         }
     }
     
-    var successCodes: [Int] {
+    public var successCodes: [Int] {
         [200, 201, 204]
     }
     
-    var authorization: String? {
+    public var authorization: String? {
         let credentials = {
             switch self {
             case .currentUser(let credentials):
@@ -96,42 +97,72 @@ enum BeDriveAPIEndpoint: APIEndpoint {
         return "Basic \(encodedCredentials)"
     }
     
-    func error(for statusCode: Int?) -> Error {
+    public var jsonDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .custom({ decoder in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
+            
+            // Some dates have fractional seconds so let's try decoding these
+            if let date = Self.customISO8601DateFormatterWithFractionSeconds.date(from: dateString) {
+                return date
+            }
+            // Others don't, so let's use the normal ISO 8601 formatter
+            if let date = Self.customISO8601DateFormatter.date(from: dateString) {
+                return date
+            }
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: ""))
+        })
+        return decoder
+    }
+    
+    private static let customISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullTime, .withFullDate]
+        return formatter
+    }()
+    
+    private static let customISO8601DateFormatterWithFractionSeconds = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullTime, .withFullDate, .withFractionalSeconds]
+        return formatter
+    }()
+    
+    public func error(for statusCode: Int?) -> Error {
         guard let statusCode else {
             return NetworkError.unknownError
         }
         return NetworkError(value: statusCode)
     }
-}
 
-extension BeDriveAPIEndpoint.Credentials {
-    internal func encoded() -> String? {
-        "\(userName):\(password)".data(using: .utf8)?.base64EncodedString()
-    }
-}
-
-extension BeDriveAPIEndpoint {
-    struct Credentials {
+    // MARK: APIEndpoint Models
+    
+    public struct Credentials {
         let userName: String
         let password: String
-    }
-
-    struct User: Decodable {
-        let firstName: String
-        let lastName: String
-        let rootItem: Item
-    }
-
-    struct Item: Decodable {
-        let id: String
-        let parentId: String?
-        let name: String
-        let isDir: Bool
-        let modificationDate: Date
-        let size: Int?
-        let contentType: ContentType?
         
-        enum ContentType {
+        public init(userName: String, password: String) {
+            self.userName = userName
+            self.password = password
+        }
+    }
+
+    public struct User: Decodable {
+        public let firstName: String
+        public let lastName: String
+        public let rootItem: Item
+    }
+
+    public struct Item: Decodable {
+        public let id: String
+        public let parentId: String?
+        public let name: String
+        public let isDir: Bool
+        public let modificationDate: Date
+        public let size: Int?
+        public let contentType: ContentType?
+        
+        public enum ContentType {
             case image(subtype: String)
             case text(subtype: String)
         }
@@ -146,7 +177,7 @@ extension BeDriveAPIEndpoint {
             case contentType
         }
         
-        init(from decoder: Decoder) throws {
+        public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             self.id = try container.decode(String.self, forKey: .id)
             self.parentId = try container.decodeIfPresent(String.self, forKey: .parentId)
@@ -179,29 +210,39 @@ extension BeDriveAPIEndpoint {
     }
 }
 
-enum NetworkError: Int, Error {
-    case invalidNameOrDuplicate = 400
-    case authenticationError = 403
-    case itemNotFound = 404
-    case noData
-    case unknownError
-
-    var localizedDescription: String {
-        switch self {
-        case .authenticationError:
-            return "Authentication failed. Check your username and password."
-        case .itemNotFound:
-            return "The item doesn't exist."
-        case .invalidNameOrDuplicate:
-            return "Invalid name or an item with this name already exists."
-        case .noData:
-            return "The item is not a file and has no data (it's a folder)."
-        case .unknownError:
-            return "An unknown error occurred."
-        }
+extension BeDriveAPIEndpoint.Credentials {
+    internal func encoded() -> String? {
+        "\(userName):\(password)".data(using: .utf8)?.base64EncodedString()
     }
-    
-    init(value: Int) {
-        self = NetworkError(rawValue: value) ?? .unknownError
+}
+
+// MARK: Network errors
+
+extension BeDriveAPIEndpoint {
+    enum NetworkError: Int, Error {
+        case invalidNameOrDuplicate = 400
+        case authenticationError = 403
+        case itemNotFound = 404
+        case noData
+        case unknownError
+        
+        var localizedDescription: String {
+            switch self {
+            case .authenticationError:
+                return "Authentication failed. Check your username and password."
+            case .itemNotFound:
+                return "The item doesn't exist."
+            case .invalidNameOrDuplicate:
+                return "Invalid name or an item with this name already exists."
+            case .noData:
+                return "The item is not a file and has no data (it's a folder)."
+            case .unknownError:
+                return "An unknown error occurred."
+            }
+        }
+        
+        init(value: Int) {
+            self = NetworkError(rawValue: value) ?? .unknownError
+        }
     }
 }

@@ -11,7 +11,8 @@ import SwiftUI
 struct BeDriveApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: APIClient()))
+            LoginView(viewModel: viewModel)
         }
     }
 }

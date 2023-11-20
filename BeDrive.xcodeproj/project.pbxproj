@@ -8,12 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */; };
-		F37B48DF2B0BB6D200511BE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DE2B0BB6D200511BE5 /* ContentView.swift */; };
-		F37B48E12B0BB6D300511BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E02B0BB6D300511BE5 /* Assets.xcassets */; };
 		F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */; };
 		F37B48EE2B0BB6D300511BE5 /* BeDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */; };
 		F37B48F82B0BB6D300511BE5 /* BeDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */; };
 		F37B48FA2B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */; };
+		F37B49162B0BB70D00511BE5 /* FileCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49062B0BB70C00511BE5 /* FileCollectionView.swift */; };
+		F37B49172B0BB70D00511BE5 /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49072B0BB70C00511BE5 /* FileRepository.swift */; };
+		F37B49182B0BB70D00511BE5 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49082B0BB70C00511BE5 /* DataCache.swift */; };
+		F37B49192B0BB70D00511BE5 /* BeDriveAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49092B0BB70C00511BE5 /* BeDriveAPIEndpoint.swift */; };
+		F37B491A2B0BB70D00511BE5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B490A2B0BB70D00511BE5 /* APIClient.swift */; };
+		F37B491B2B0BB70D00511BE5 /* AsyncTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B490C2B0BB70D00511BE5 /* AsyncTextView.swift */; };
+		F37B491C2B0BB70D00511BE5 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B490D2B0BB70D00511BE5 /* AsyncImageView.swift */; };
+		F37B491D2B0BB70D00511BE5 /* AsyncLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B490E2B0BB70D00511BE5 /* AsyncLoadableView.swift */; };
+		F37B491E2B0BB70D00511BE5 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49102B0BB70D00511BE5 /* FileCell.swift */; };
+		F37B491F2B0BB70D00511BE5 /* FileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49112B0BB70D00511BE5 /* FileCellViewModel.swift */; };
+		F37B49202B0BB70D00511BE5 /* FileGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49122B0BB70D00511BE5 /* FileGridViewModel.swift */; };
+		F37B49212B0BB70D00511BE5 /* FileNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49132B0BB70D00511BE5 /* FileNavigationView.swift */; };
+		F37B49222B0BB70D00511BE5 /* FileGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49142B0BB70D00511BE5 /* FileGridView.swift */; };
+		F37B49232B0BB70D00511BE5 /* FileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49152B0BB70D00511BE5 /* FileModels.swift */; };
+		F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B49242B0BB72700511BE5 /* Assets.xcassets */; };
+		F37B49292B0BB75100511BE5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49272B0BB75100511BE5 /* LoginViewModel.swift */; };
+		F37B492A2B0BB75100511BE5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49282B0BB75100511BE5 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +51,30 @@
 /* Begin PBXFileReference section */
 		F37B48D92B0BB6D200511BE5 /* BeDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveApp.swift; sourceTree = "<group>"; };
-		F37B48DE2B0BB6D200511BE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F37B48E02B0BB6D300511BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveTests.swift; sourceTree = "<group>"; };
 		F37B48F32B0BB6D300511BE5 /* BeDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveUITests.swift; sourceTree = "<group>"; };
 		F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F37B49062B0BB70C00511BE5 /* FileCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCollectionView.swift; sourceTree = "<group>"; };
+		F37B49072B0BB70C00511BE5 /* FileRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
+		F37B49082B0BB70C00511BE5 /* DataCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
+		F37B49092B0BB70C00511BE5 /* BeDriveAPIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeDriveAPIEndpoint.swift; sourceTree = "<group>"; };
+		F37B490A2B0BB70D00511BE5 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F37B490C2B0BB70D00511BE5 /* AsyncTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTextView.swift; sourceTree = "<group>"; };
+		F37B490D2B0BB70D00511BE5 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		F37B490E2B0BB70D00511BE5 /* AsyncLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncLoadableView.swift; sourceTree = "<group>"; };
+		F37B49102B0BB70D00511BE5 /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		F37B49112B0BB70D00511BE5 /* FileCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCellViewModel.swift; sourceTree = "<group>"; };
+		F37B49122B0BB70D00511BE5 /* FileGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileGridViewModel.swift; sourceTree = "<group>"; };
+		F37B49132B0BB70D00511BE5 /* FileNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileNavigationView.swift; sourceTree = "<group>"; };
+		F37B49142B0BB70D00511BE5 /* FileGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileGridView.swift; sourceTree = "<group>"; };
+		F37B49152B0BB70D00511BE5 /* FileModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileModels.swift; sourceTree = "<group>"; };
+		F37B49242B0BB72700511BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F37B49272B0BB75100511BE5 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F37B49282B0BB75100511BE5 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F37B492D2B0BB84400511BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +125,18 @@
 		F37B48DB2B0BB6D200511BE5 /* BeDrive */ = {
 			isa = PBXGroup;
 			children = (
+				F37B492D2B0BB84400511BE5 /* Info.plist */,
 				F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */,
-				F37B48DE2B0BB6D200511BE5 /* ContentView.swift */,
-				F37B48E02B0BB6D300511BE5 /* Assets.xcassets */,
+				F37B490A2B0BB70D00511BE5 /* APIClient.swift */,
+				F37B49092B0BB70C00511BE5 /* BeDriveAPIEndpoint.swift */,
+				F37B490B2B0BB70D00511BE5 /* CoreUI */,
+				F37B49082B0BB70C00511BE5 /* DataCache.swift */,
+				F37B49062B0BB70C00511BE5 /* FileCollectionView.swift */,
+				F37B49262B0BB75100511BE5 /* LoginKit */,
+				F37B49152B0BB70D00511BE5 /* FileModels.swift */,
+				F37B490F2B0BB70D00511BE5 /* FileNavigationKit */,
+				F37B49072B0BB70C00511BE5 /* FileRepository.swift */,
+				F37B49242B0BB72700511BE5 /* Assets.xcassets */,
 				F37B48E22B0BB6D300511BE5 /* Preview Content */,
 			);
 			path = BeDrive;
@@ -125,6 +165,37 @@
 				F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */,
 			);
 			path = BeDriveUITests;
+			sourceTree = "<group>";
+		};
+		F37B490B2B0BB70D00511BE5 /* CoreUI */ = {
+			isa = PBXGroup;
+			children = (
+				F37B490C2B0BB70D00511BE5 /* AsyncTextView.swift */,
+				F37B490D2B0BB70D00511BE5 /* AsyncImageView.swift */,
+				F37B490E2B0BB70D00511BE5 /* AsyncLoadableView.swift */,
+			);
+			path = CoreUI;
+			sourceTree = "<group>";
+		};
+		F37B490F2B0BB70D00511BE5 /* FileNavigationKit */ = {
+			isa = PBXGroup;
+			children = (
+				F37B49102B0BB70D00511BE5 /* FileCell.swift */,
+				F37B49112B0BB70D00511BE5 /* FileCellViewModel.swift */,
+				F37B49122B0BB70D00511BE5 /* FileGridViewModel.swift */,
+				F37B49132B0BB70D00511BE5 /* FileNavigationView.swift */,
+				F37B49142B0BB70D00511BE5 /* FileGridView.swift */,
+			);
+			path = FileNavigationKit;
+			sourceTree = "<group>";
+		};
+		F37B49262B0BB75100511BE5 /* LoginKit */ = {
+			isa = PBXGroup;
+			children = (
+				F37B49272B0BB75100511BE5 /* LoginViewModel.swift */,
+				F37B49282B0BB75100511BE5 /* LoginView.swift */,
+			);
+			path = LoginKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +302,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */,
 				F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */,
-				F37B48E12B0BB6D300511BE5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +328,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37B48DF2B0BB6D200511BE5 /* ContentView.swift in Sources */,
+				F37B49222B0BB70D00511BE5 /* FileGridView.swift in Sources */,
+				F37B49162B0BB70D00511BE5 /* FileCollectionView.swift in Sources */,
+				F37B491A2B0BB70D00511BE5 /* APIClient.swift in Sources */,
+				F37B491F2B0BB70D00511BE5 /* FileCellViewModel.swift in Sources */,
+				F37B49292B0BB75100511BE5 /* LoginViewModel.swift in Sources */,
+				F37B49182B0BB70D00511BE5 /* DataCache.swift in Sources */,
+				F37B491B2B0BB70D00511BE5 /* AsyncTextView.swift in Sources */,
+				F37B491C2B0BB70D00511BE5 /* AsyncImageView.swift in Sources */,
 				F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */,
+				F37B49212B0BB70D00511BE5 /* FileNavigationView.swift in Sources */,
+				F37B492A2B0BB75100511BE5 /* LoginView.swift in Sources */,
+				F37B491D2B0BB70D00511BE5 /* AsyncLoadableView.swift in Sources */,
+				F37B49172B0BB70D00511BE5 /* FileRepository.swift in Sources */,
+				F37B49202B0BB70D00511BE5 /* FileGridViewModel.swift in Sources */,
+				F37B491E2B0BB70D00511BE5 /* FileCell.swift in Sources */,
+				F37B49192B0BB70D00511BE5 /* BeDriveAPIEndpoint.swift in Sources */,
+				F37B49232B0BB70D00511BE5 /* FileModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +511,8 @@
 				DEVELOPMENT_TEAM = EHH2USXJ7R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeDrive/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +542,8 @@
 				DEVELOPMENT_TEAM = EHH2USXJ7R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeDrive/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

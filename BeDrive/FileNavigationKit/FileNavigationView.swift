@@ -85,6 +85,6 @@ struct UserIconView: View {
         guard let firstCharacter = string.first else {
             return ""
         }
-        return String(firstCharacter)
+        return String(firstCharacter).uppercased()
     }
 }

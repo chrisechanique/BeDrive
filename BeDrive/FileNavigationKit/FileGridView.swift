@@ -24,7 +24,7 @@ struct FileGridView: View {
     private var gridBody: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 4) {
-                ForEach(viewModel.fileItems) { item in
+                ForEach(viewModel.fileItems, id: \.id) { item in
                     if let folder = item as? Folder {
                         folderCellView(for: folder)
                     } else if let imageFile = item as? ImageFile {
@@ -122,13 +122,13 @@ extension FileGridView {
 
 extension FileGridView {
     
-    func delete(_ fileItem: FileItem) {
+    func delete(_ fileItem: some FileItem) {
         Task {
             try await viewModel.repository.deleteItem(fileItem)
         }
     }
     
-    func deleteButton(for fileItem: FileItem) -> some View {
+    func deleteButton(for fileItem: some FileItem) -> some View {
         Button(action: {
             delete(fileItem)
         }) {

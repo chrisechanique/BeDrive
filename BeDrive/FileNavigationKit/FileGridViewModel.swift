@@ -9,7 +9,7 @@ import Foundation
 import AsyncView
 
 class FileGridViewModel: ObservableObject, DataLoadable {
-    @MainActor @Published var fileItems: [FileItem] = []
+    @MainActor @Published var fileItems: [any FileItem] = []
     @MainActor @Published var dataState: DataLoadingState = .empty(message: nil)
     @MainActor @Published var showFolderActionsAlert = false
     @MainActor @Published var showDocumentPicker = false

@@ -24,11 +24,11 @@ class FileCellViewModel: ObservableObject {
         return formatter
     }()
     
-    init(file: FileItem) {
+    init(file: some FileItem) {
         self.name = file.name
         self.icon = file.cellIcon()
         self.date = Self.dateToStringFormatter.string(from: file.modificationDate)
-        if let dataItem = file as? DataItem, dataItem.size > 0 {
+        if let dataItem = file as? (any DataItem), dataItem.size > 0 {
             self.size = Self.dataSizeString(from: dataItem.size)
         } else {
             self.size = nil

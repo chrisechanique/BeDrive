@@ -15,42 +15,6 @@ struct LoginView: View {
         self.viewModel = viewModel
     }
     
-    fileprivate func EmailInput() -> some View {
-        TextField("Username", text: $viewModel.userName)
-            .keyboardType(.emailAddress)
-            .disableAutocorrection(true)
-            .autocapitalization(.none)
-            .textFieldStyle(.roundedBorder)
-    }
-    
-    fileprivate func PasswordInput() -> some View {
-        SecureField("Password", text: $viewModel.password)
-            .textFieldStyle(.roundedBorder)
-    }
-    
-    fileprivate func LoginButton() -> some View {
-        Button(action: {
-            Task {
-                await viewModel.signIn()
-            }
-        }) {
-            Text("Sign In")
-                .foregroundStyle(Color.white)
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding()
-        }
-        .background(Color.accentColor)
-        .cornerRadius(5)    }
-    
-    fileprivate func TitleView() -> some View {
-        Text("BeDrive://")
-            .font(.largeTitle)
-            .fontWeight(.bold)
-            .foregroundStyle(Color.white)
-        
-    }
-    
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
@@ -75,6 +39,56 @@ struct LoginView: View {
         } message: {
             Text(viewModel.errorMessage)
         }
+    }
+    
+    private func EmailInput() -> some View {
+        TextField("Username", text: $viewModel.userName)
+            .keyboardType(.emailAddress)
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
+            .textFieldStyle(.roundedBorder)
+    }
+    
+    private func PasswordInput() -> some View {
+        SecureField("Password", text: $viewModel.password)
+            .textFieldStyle(.roundedBorder)
+    }
+    
+    private func LoginButton() -> some View {
+        Button(action: {
+            Task {
+                await viewModel.signIn()
+            }
+        }) {
+            switch viewModel.loginState {
+            case .loading:
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .foregroundStyle(Color.white)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding()
+            default:
+                Text("Sign In")
+                    .foregroundStyle(Color.white)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding()
+            }
+            
+        }
+        .background(Color.accentColor)
+        .cornerRadius(5)
+    }
+    
+    
+    
+    private func TitleView() -> some View {
+        Text("BeDrive://")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .foregroundStyle(Color.white)
+        
     }
 }
 

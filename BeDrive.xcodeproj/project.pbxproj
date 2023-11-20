@@ -27,6 +27,9 @@
 		F37B493C2B0BE9A300511BE5 /* AsyncView in Resources */ = {isa = PBXBuildFile; fileRef = F37B493B2B0BE9A300511BE5 /* AsyncView */; };
 		F37B493F2B0BE9DF00511BE5 /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = F37B493E2B0BE9DF00511BE5 /* APIClient */; };
 		F37B49422B0BE9ED00511BE5 /* AsyncView in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49412B0BE9ED00511BE5 /* AsyncView */; };
+		F37B49452B0BFFB800511BE5 /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49442B0BFFB800511BE5 /* DataCache */; };
+		F37B49472B0C008100511BE5 /* AsyncView in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49462B0C008100511BE5 /* AsyncView */; };
+		F37B49492B0C008400511BE5 /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49482B0C008400511BE5 /* APIClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37B49472B0C008100511BE5 /* AsyncView in Frameworks */,
+				F37B49492B0C008400511BE5 /* APIClient in Frameworks */,
+				F37B49452B0BFFB800511BE5 /* DataCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,7 @@
 				F37B48EC2B0BB6D300511BE5 /* BeDriveTests */,
 				F37B48F62B0BB6D300511BE5 /* BeDriveUITests */,
 				F37B48DA2B0BB6D200511BE5 /* Products */,
+				F37B49432B0BFFAF00511BE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +191,13 @@
 			path = LoginKit;
 			sourceTree = "<group>";
 		};
+		F37B49432B0BFFAF00511BE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,6 +238,11 @@
 				F37B48EB2B0BB6D300511BE5 /* PBXTargetDependency */,
 			);
 			name = BeDriveTests;
+			packageProductDependencies = (
+				F37B49442B0BFFB800511BE5 /* DataCache */,
+				F37B49462B0C008100511BE5 /* AsyncView */,
+				F37B49482B0C008400511BE5 /* APIClient */,
+			);
 			productName = BeDriveTests;
 			productReference = F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -507,8 +526,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,8 +557,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,6 +720,19 @@
 		F37B49412B0BE9ED00511BE5 /* AsyncView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AsyncView;
+		};
+		F37B49442B0BFFB800511BE5 /* DataCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataCache;
+		};
+		F37B49462B0C008100511BE5 /* AsyncView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F37B49402B0BE9ED00511BE5 /* XCLocalSwiftPackageReference "BeDrive/AsyncView" */;
+			productName = AsyncView;
+		};
+		F37B49482B0C008400511BE5 /* APIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = APIClient;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

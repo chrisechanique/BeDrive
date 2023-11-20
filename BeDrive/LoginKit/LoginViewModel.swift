@@ -30,8 +30,14 @@ class LoginViewModel: ObservableObject {
     }
     
     func signIn() async {
+        await MainActor.run(body: {
+            self.loginState = .loading
+        })
         do {
             let userSession = try await repository.login(with: userName, password: password)
+            await MainActor.run(body: {
+                self.loginState = .loading
+            })
             DispatchQueue.main.async {
                 self.currentUser = userSession.currentUser
                 self.loginState = .loggedIn

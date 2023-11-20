@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */; };
+		F37B48DF2B0BB6D200511BE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DE2B0BB6D200511BE5 /* ContentView.swift */; };
+		F37B48E12B0BB6D300511BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E02B0BB6D300511BE5 /* Assets.xcassets */; };
+		F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */; };
+		F37B48EE2B0BB6D300511BE5 /* BeDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */; };
+		F37B48F82B0BB6D300511BE5 /* BeDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */; };
+		F37B48FA2B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F37B48EA2B0BB6D300511BE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F37B48D12B0BB6D200511BE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F37B48D82B0BB6D200511BE5;
+			remoteInfo = BeDrive;
+		};
+		F37B48F42B0BB6D300511BE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F37B48D12B0BB6D200511BE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F37B48D82B0BB6D200511BE5;
+			remoteInfo = BeDrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F37B48D92B0BB6D200511BE5 /* BeDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveApp.swift; sourceTree = "<group>"; };
+		F37B48DE2B0BB6D200511BE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F37B48E02B0BB6D300511BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveTests.swift; sourceTree = "<group>"; };
+		F37B48F32B0BB6D300511BE5 /* BeDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveUITests.swift; sourceTree = "<group>"; };
+		F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F37B48D62B0BB6D200511BE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37B48E62B0BB6D300511BE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37B48F02B0BB6D300511BE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F37B48D02B0BB6D200511BE5 = {
+			isa = PBXGroup;
+			children = (
+				F37B48DB2B0BB6D200511BE5 /* BeDrive */,
+				F37B48EC2B0BB6D300511BE5 /* BeDriveTests */,
+				F37B48F62B0BB6D300511BE5 /* BeDriveUITests */,
+				F37B48DA2B0BB6D200511BE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F37B48DA2B0BB6D200511BE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F37B48D92B0BB6D200511BE5 /* BeDrive.app */,
+				F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */,
+				F37B48F32B0BB6D300511BE5 /* BeDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F37B48DB2B0BB6D200511BE5 /* BeDrive */ = {
+			isa = PBXGroup;
+			children = (
+				F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */,
+				F37B48DE2B0BB6D200511BE5 /* ContentView.swift */,
+				F37B48E02B0BB6D300511BE5 /* Assets.xcassets */,
+				F37B48E22B0BB6D300511BE5 /* Preview Content */,
+			);
+			path = BeDrive;
+			sourceTree = "<group>";
+		};
+		F37B48E22B0BB6D300511BE5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F37B48EC2B0BB6D300511BE5 /* BeDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */,
+			);
+			path = BeDriveTests;
+			sourceTree = "<group>";
+		};
+		F37B48F62B0BB6D300511BE5 /* BeDriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */,
+				F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */,
+			);
+			path = BeDriveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F37B48D82B0BB6D200511BE5 /* BeDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37B48FD2B0BB6D300511BE5 /* Build configuration list for PBXNativeTarget "BeDrive" */;
+			buildPhases = (
+				F37B48D52B0BB6D200511BE5 /* Sources */,
+				F37B48D62B0BB6D200511BE5 /* Frameworks */,
+				F37B48D72B0BB6D200511BE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeDrive;
+			productName = BeDrive;
+			productReference = F37B48D92B0BB6D200511BE5 /* BeDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F37B48E82B0BB6D300511BE5 /* BeDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37B49002B0BB6D300511BE5 /* Build configuration list for PBXNativeTarget "BeDriveTests" */;
+			buildPhases = (
+				F37B48E52B0BB6D300511BE5 /* Sources */,
+				F37B48E62B0BB6D300511BE5 /* Frameworks */,
+				F37B48E72B0BB6D300511BE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F37B48EB2B0BB6D300511BE5 /* PBXTargetDependency */,
+			);
+			name = BeDriveTests;
+			productName = BeDriveTests;
+			productReference = F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F37B48F22B0BB6D300511BE5 /* BeDriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37B49032B0BB6D300511BE5 /* Build configuration list for PBXNativeTarget "BeDriveUITests" */;
+			buildPhases = (
+				F37B48EF2B0BB6D300511BE5 /* Sources */,
+				F37B48F02B0BB6D300511BE5 /* Frameworks */,
+				F37B48F12B0BB6D300511BE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F37B48F52B0BB6D300511BE5 /* PBXTargetDependency */,
+			);
+			name = BeDriveUITests;
+			productName = BeDriveUITests;
+			productReference = F37B48F32B0BB6D300511BE5 /* BeDriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F37B48D12B0BB6D200511BE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F37B48D82B0BB6D200511BE5 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F37B48E82B0BB6D300511BE5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F37B48D82B0BB6D200511BE5;
+					};
+					F37B48F22B0BB6D300511BE5 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F37B48D82B0BB6D200511BE5;
+					};
+				};
+			};
+			buildConfigurationList = F37B48D42B0BB6D200511BE5 /* Build configuration list for PBXProject "BeDrive" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F37B48D02B0BB6D200511BE5;
+			productRefGroup = F37B48DA2B0BB6D200511BE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F37B48D82B0BB6D200511BE5 /* BeDrive */,
+				F37B48E82B0BB6D300511BE5 /* BeDriveTests */,
+				F37B48F22B0BB6D300511BE5 /* BeDriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F37B48D72B0BB6D200511BE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */,
+				F37B48E12B0BB6D300511BE5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37B48E72B0BB6D300511BE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37B48F12B0BB6D300511BE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F37B48D52B0BB6D200511BE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37B48DF2B0BB6D200511BE5 /* ContentView.swift in Sources */,
+				F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37B48E52B0BB6D300511BE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37B48EE2B0BB6D300511BE5 /* BeDriveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37B48EF2B0BB6D300511BE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37B48FA2B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift in Sources */,
+				F37B48F82B0BB6D300511BE5 /* BeDriveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F37B48EB2B0BB6D300511BE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F37B48D82B0BB6D200511BE5 /* BeDrive */;
+			targetProxy = F37B48EA2B0BB6D300511BE5 /* PBXContainerItemProxy */;
+		};
+		F37B48F52B0BB6D300511BE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F37B48D82B0BB6D200511BE5 /* BeDrive */;
+			targetProxy = F37B48F42B0BB6D300511BE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F37B48FB2B0BB6D300511BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F37B48FC2B0BB6D300511BE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F37B48FE2B0BB6D300511BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BeDrive/Preview Content\"";
+				DEVELOPMENT_TEAM = EHH2USXJ7R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisechanique.BeDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F37B48FF2B0BB6D300511BE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BeDrive/Preview Content\"";
+				DEVELOPMENT_TEAM = EHH2USXJ7R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisechanique.BeDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F37B49012B0BB6D300511BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EHH2USXJ7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisechanique.BeDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeDrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BeDrive";
+			};
+			name = Debug;
+		};
+		F37B49022B0BB6D300511BE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EHH2USXJ7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisechanique.BeDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeDrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BeDrive";
+			};
+			name = Release;
+		};
+		F37B49042B0BB6D300511BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EHH2USXJ7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisechanique.BeDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeDrive;
+			};
+			name = Debug;
+		};
+		F37B49052B0BB6D300511BE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EHH2USXJ7R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisechanique.BeDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BeDrive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F37B48D42B0BB6D200511BE5 /* Build configuration list for PBXProject "BeDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37B48FB2B0BB6D300511BE5 /* Debug */,
+				F37B48FC2B0BB6D300511BE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F37B48FD2B0BB6D300511BE5 /* Build configuration list for PBXNativeTarget "BeDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37B48FE2B0BB6D300511BE5 /* Debug */,
+				F37B48FF2B0BB6D300511BE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F37B49002B0BB6D300511BE5 /* Build configuration list for PBXNativeTarget "BeDriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37B49012B0BB6D300511BE5 /* Debug */,
+				F37B49022B0BB6D300511BE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F37B49032B0BB6D300511BE5 /* Build configuration list for PBXNativeTarget "BeDriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37B49042B0BB6D300511BE5 /* Debug */,
+				F37B49052B0BB6D300511BE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F37B48D12B0BB6D200511BE5 /* Project object */;
+}

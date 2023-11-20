@@ -178,7 +178,7 @@ actor BeDriveRepository: FileRepository, Authentication {
     func createDataItem(in folder: Folder, name: String, data: Data) async throws -> any DataItem {
         guard let credentials else { throw RepositoryError.noCredentials }
         let item = try await apiClient.upload(data, to: BeDriveAPIEndpoint.createItem(folderId: folder.id, itemName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
-        guard let dataItem = item.mapToFilableItem() as? (any DataItem) else {
+        guard let dataItem = item.mapToFilableItem() as? any DataItem else {
             throw RepositoryError.invalidFileItem
         }
         

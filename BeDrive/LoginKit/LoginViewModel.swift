@@ -44,7 +44,7 @@ class LoginViewModel: ObservableObject {
         guard loginState != .loading else { return }
         loginState = .loading
         do {
-            try await Task.sleep(nanoseconds: 2_000_000_000)
+            try await Task.sleep(nanoseconds: 500_000_000)
             loggedInUser = try await repository.login(with: userName, password: password)
             loginState = .loggedIn
         } catch {

@@ -11,7 +11,6 @@ import FileModels
 import FileRepository
 
 class FileNavigationViewModel: ObservableObject {
-    @Published var showLogoutActionsAlert = false
     let currentUser: User
     let repository: FileRepository
     
@@ -22,10 +21,10 @@ class FileNavigationViewModel: ObservableObject {
 }
 
 struct FileNavigationView: View {
-    @ObservedObject var viewModel: FileNavigationViewModel
+    @StateObject var viewModel: FileNavigationViewModel
     
     init(viewModel: FileNavigationViewModel) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -35,58 +34,11 @@ struct FileNavigationView: View {
                 FileGridView(viewModel: viewModel)
             }
             .toolbar {
-                userIconToolbarItem()
+                ToolbarItem(placement: .navigationBarLeading) {
+                    UserActionsButton(user: self.viewModel.currentUser, repository: viewModel.repository)
+                }
             }
-//            .actionSheet(isPresented: $viewModel.showLogoutActionsAlert) {
-//                // Present an action sheet with options
-//                logoutActionSheet(with: self.viewModel.currentUser)
-//            }
         }
         .preferredColorScheme(.dark)
-    }
-    
-    func userIconToolbarItem() -> ToolbarItem<(), Button<UserIconView>> {
-        ToolbarItem(placement: .navigationBarLeading) {
-            Button(action: {
-//                viewModel.showLogoutActionsAlert = true
-            }) {
-                UserIconView(name: self.viewModel.currentUser.firstName)
-            }
-        }
-    }
-    
-    
-    func logoutActionSheet(with user: User) -> ActionSheet {
-        ActionSheet(
-            title: Text("Logged in as \(user.firstName) \(user.lastName)"),
-            buttons: [
-                .default(Text("Log out"), action: {
-                    // TODO: Add logout
-                }),
-                .cancel()
-            ]
-        )
-    }
-}
-
-struct UserIconView: View {
-    let name: String
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.accent)
-                .frame(width: 32, height: 32)
-            
-            Text(firstLetter(of: name))
-                .foregroundColor(.white)
-                .font(.headline)
-        }
-    }
-    
-    func firstLetter(of string: String) -> String {
-        guard let firstCharacter = string.first else {
-            return ""
-        }
-        return String(firstCharacter).uppercased()
     }
 }

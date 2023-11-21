@@ -32,7 +32,10 @@
 		F37B49552B0C0D2400511BE5 /* FileCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49542B0C0D2400511BE5 /* FileCache */; };
 		F37B49592B0C0EF400511BE5 /* FileRepository in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49582B0C0EF400511BE5 /* FileRepository */; };
 		F37B495B2B0C110000511BE5 /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B495A2B0C110000511BE5 /* DataCache */; };
-		F37B495D2B0CE14C00511BE5 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B495C2B0CE14C00511BE5 /* AppRouter.swift */; };
+		F37B49602B0D0A1900511BE5 /* FolderActionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B495F2B0D0A1900511BE5 /* FolderActionsButton.swift */; };
+		F37B49622B0D11BD00511BE5 /* FolderActionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49612B0D11BD00511BE5 /* FolderActionsViewModel.swift */; };
+		F37B49642B0D1C8300511BE5 /* UserActionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49632B0D1C8300511BE5 /* UserActionsButton.swift */; };
+		F37B49662B0D1DCA00511BE5 /* UserActionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49652B0D1DCA00511BE5 /* UserActionsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +79,10 @@
 		F37B494E2B0C0A8400511BE5 /* FileModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FileModels; sourceTree = "<group>"; };
 		F37B49522B0C0C3E00511BE5 /* FileCache */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FileCache; sourceTree = "<group>"; };
 		F37B49562B0C0ECA00511BE5 /* FileRepository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FileRepository; sourceTree = "<group>"; };
-		F37B495C2B0CE14C00511BE5 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppRouter.swift; path = BeDrive/Router/AppRouter.swift; sourceTree = SOURCE_ROOT; };
+		F37B495F2B0D0A1900511BE5 /* FolderActionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderActionsButton.swift; sourceTree = "<group>"; };
+		F37B49612B0D11BD00511BE5 /* FolderActionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderActionsViewModel.swift; sourceTree = "<group>"; };
+		F37B49632B0D1C8300511BE5 /* UserActionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionsButton.swift; sourceTree = "<group>"; };
+		F37B49652B0D1DCA00511BE5 /* UserActionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +153,6 @@
 				F37B493A2B0BE95200511BE5 /* APIClient */,
 				F37B49322B0BC24800511BE5 /* DataCache */,
 				F37B492D2B0BB84400511BE5 /* Info.plist */,
-				F37B495E2B0CE15600511BE5 /* Router */,
 				F37B49262B0BB75100511BE5 /* LoginKit */,
 				F37B490F2B0BB70D00511BE5 /* FileNavigationKit */,
 				F37B49242B0BB72700511BE5 /* Assets.xcassets */,
@@ -189,6 +194,10 @@
 				F37B49122B0BB70D00511BE5 /* FileGridViewModel.swift */,
 				F37B49132B0BB70D00511BE5 /* FileNavigationView.swift */,
 				F37B49142B0BB70D00511BE5 /* FileGridView.swift */,
+				F37B495F2B0D0A1900511BE5 /* FolderActionsButton.swift */,
+				F37B49612B0D11BD00511BE5 /* FolderActionsViewModel.swift */,
+				F37B49632B0D1C8300511BE5 /* UserActionsButton.swift */,
+				F37B49652B0D1DCA00511BE5 /* UserActionsViewModel.swift */,
 			);
 			path = FileNavigationKit;
 			sourceTree = "<group>";
@@ -207,14 +216,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F37B495E2B0CE15600511BE5 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				F37B495C2B0CE14C00511BE5 /* AppRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,15 +372,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37B49642B0D1C8300511BE5 /* UserActionsButton.swift in Sources */,
+				F37B49622B0D11BD00511BE5 /* FolderActionsViewModel.swift in Sources */,
 				F37B49222B0BB70D00511BE5 /* FileGridView.swift in Sources */,
 				F37B491F2B0BB70D00511BE5 /* FileCellViewModel.swift in Sources */,
 				F37B49292B0BB75100511BE5 /* LoginViewModel.swift in Sources */,
 				F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */,
 				F37B49212B0BB70D00511BE5 /* FileNavigationView.swift in Sources */,
-				F37B495D2B0CE14C00511BE5 /* AppRouter.swift in Sources */,
 				F37B492A2B0BB75100511BE5 /* LoginView.swift in Sources */,
+				F37B49602B0D0A1900511BE5 /* FolderActionsButton.swift in Sources */,
 				F37B49202B0BB70D00511BE5 /* FileGridViewModel.swift in Sources */,
 				F37B491E2B0BB70D00511BE5 /* FileCell.swift in Sources */,
+				F37B49662B0D1DCA00511BE5 /* UserActionsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

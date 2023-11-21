@@ -11,7 +11,7 @@ import APIClient
 import FileModels
 import FileCache
 
-public actor BeDriveRepository: FileRepository, Authentication {
+public actor BeDriveRepository: FileRepository {
     internal var fileCaches = [String : FileCache]()
     internal var dataCache = DataCache()
     private let apiClient: APIClient

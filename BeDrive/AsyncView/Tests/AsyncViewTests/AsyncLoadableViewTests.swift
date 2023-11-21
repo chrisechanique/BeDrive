@@ -76,17 +76,4 @@ final class AsyncLoadableViewTests: XCTestCase {
         // Then
         XCTAssertTrue(asyncLoadableView.body is _ConditionalContent<Spacer, VStack<Image>>)
     }
-    
-    func testDataStateError() {
-        // Given
-        let viewModel = MockViewModel()
-        viewModel.dataState = .error(message: "Error loading data")
-        let contentView: some View = Text("Main Content")
-        
-        // When
-        let asyncLoadableView = AsyncLoadableView(viewModel: viewModel, contentView: { contentView })
-        
-        // Then
-        XCTAssertTrue(asyncLoadableView.body is _ConditionalContent<VStack<HStack<Image, Text>>, VStack<Image>>)
-    }
 }

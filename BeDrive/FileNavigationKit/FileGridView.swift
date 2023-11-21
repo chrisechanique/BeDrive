@@ -12,9 +12,9 @@ import FileModels
 import FileRepository
 
 struct FileGridView: View {
-    @ObservedObject var viewModel: FileGridViewModel
+    @StateObject var viewModel: FileGridViewModel
     init(viewModel: FileGridViewModel) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     private let columns = [
@@ -39,25 +39,7 @@ struct FileGridView: View {
             .padding()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        viewModel.showFolderActionsAlert = true
-                    }) {
-                        Image(systemName: "folder.badge.plus")
-                    }
-                }
-            }
-            .actionSheet(isPresented: $viewModel.showFolderActionsAlert) {
-                // Present an action sheet with options
-                fileCreationActionSheet()
-            }
-            .fileImporter(isPresented: $viewModel.showDocumentPicker, allowedContentTypes: [.text, .png, .jpeg], allowsMultipleSelection: false) { result in
-                switch result {
-                case .success(let files):
-                    guard let file = files.first else { return }
-                    viewModel.selectedFileUrl = file
-                case .failure(let error):
-                    // handle error
-                    print(error)
+                    FolderActionsButton(folder: viewModel.folder, repository: viewModel.repository)
                 }
             }
         }
@@ -65,6 +47,7 @@ struct FileGridView: View {
         .preferredColorScheme(.dark)
     }
     
+    // Wrap content in loadable view object to handle loading and error states
     var body: some View {
         AsyncLoadableView(viewModel: viewModel) {
             gridBody
@@ -123,16 +106,11 @@ extension FileGridView {
 // MARK: File Deletion
 
 extension FileGridView {
-    
-    func delete(_ fileItem: some FileItem) {
-        Task {
-            try await viewModel.repository.deleteItem(fileItem)
-        }
-    }
-    
     func deleteButton(for fileItem: some FileItem) -> some View {
         Button(action: {
-            delete(fileItem)
+            Task {
+                await viewModel.delete(fileItem)
+            }
         }) {
             Text("Delete")
             Image(systemName: "trash")
@@ -141,52 +119,6 @@ extension FileGridView {
 }
 
 // MARK: File Creation Action Sheet
-
-extension FileGridView {
-    
-    func fileCreationActionSheet() -> ActionSheet {
-        ActionSheet(
-            title: Text("Folder Actions"),
-            buttons: [
-                .default(Text("Create new folder"), action: {
-                    // Show an alert with a text field for folder name
-                    createFolderAlert()
-                }),
-                .default(Text("Upload file from device"), action: {
-                    viewModel.showDocumentPicker = true
-                }),
-                .cancel()
-            ]
-        )
-    }
-    
-    func createFolderAlert() {
-        // Alert with a text field for entering folder name
-        let alert = UIAlertController(title: "Create Folder", message: nil, preferredStyle: .alert)
-        
-        alert.addTextField { textField in
-            textField.placeholder = "Folder Name"
-        }
-        
-        alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { _ in
-            // Handle the folder creation with the entered folder name
-            if let folderName = alert.textFields?.first?.text, !folderName.isEmpty {
-                Task {
-                    do {
-                        let folder = try await viewModel.repository.createFolder(named: folderName, in: viewModel.folder)
-                        print(folder)
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        // Present the alert
-        UIApplication.shared.keyWindow?.rootViewController?.presentedViewController?.present(alert, animated: true, completion: nil)
-    }
-}
 
 extension FileGridViewModel {
     func image(for imageFile: ImageFile) async throws -> UIImage {

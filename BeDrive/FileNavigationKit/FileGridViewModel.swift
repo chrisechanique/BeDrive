@@ -14,17 +14,7 @@ import FileRepository
 class FileGridViewModel: ObservableObject, DataLoadable {
     @MainActor @Published var fileItems: [any FileItem] = []
     @MainActor @Published var dataState: DataLoadingState = .empty(message: nil)
-    @MainActor @Published var showFolderActionsAlert = false
-    @MainActor @Published var showDocumentPicker = false
-    @MainActor @Published var selectedFileUrl: URL? {
-        didSet {
-            guard let selectedFileUrl else { return }
-            Task {
-                await didSelectFileURL(selectedFileUrl)
-            }
-        }
-    }
-    
+    @MainActor @Published var errorMessage: String? = nil
     let folder: Folder
     let repository: FileRepository
     var fileCache: FileCache?
@@ -56,6 +46,15 @@ class FileGridViewModel: ObservableObject, DataLoadable {
         }
         Task {
             await subscribeToFileUpdates()
+        }
+    }
+    
+    @MainActor
+    func delete(_ fileItem: any FileItem) async {
+        do {
+            let _ = try await repository.deleteItem(fileItem)
+        } catch {
+            errorMessage = error.localizedDescription
         }
     }
 }

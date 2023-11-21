@@ -7,6 +7,8 @@
 
 import SwiftUI
 import AsyncView
+import FileModels
+import FileRepository
 
 class FileNavigationViewModel: ObservableObject {
     @Published var showLogoutActionsAlert = false

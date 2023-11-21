@@ -6,22 +6,32 @@
 //
 
 import Foundation
+import FileRepository
+import FileModels
 
 class LoginViewModel: ObservableObject {
-    enum LoginState {
+    enum LoginState: Equatable {
         case normal
         case loading
         case loggedIn
-        case failed(error:Error)
+        case error(message: String)
     }
     
-    @Published var userName = "noel"
-    @Published var password = "foobar"
-    @Published var errorMessage = ""
-    @Published var hasError = false
-    @Published var isLoggedIn = false
+    @Published var userName = "noel" {
+        didSet {
+            guard userName != oldValue else { return }
+            loginDisabled = userName.isEmpty || password.isEmpty
+        }
+    }
+    @Published var password = "foobar" {
+        didSet {
+            guard password != oldValue else { return }
+            loginDisabled = userName.isEmpty || password.isEmpty
+        }
+    }
     @Published var loginState = LoginState.normal
-    @Published var currentUser: User?
+    @Published var loggedInUser: User?
+    @Published var loginDisabled = false
     
     let repository: FileRepository
 
@@ -29,24 +39,16 @@ class LoginViewModel: ObservableObject {
         self.repository = repository
     }
     
+    @MainActor
     func signIn() async {
-        await MainActor.run(body: {
-            self.loginState = .loading
-        })
+        guard loginState != .loading else { return }
+        loginState = .loading
         do {
-            let userSession = try await repository.login(with: userName, password: password)
-            await MainActor.run(body: {
-                self.loginState = .loading
-            })
-            DispatchQueue.main.async {
-                self.currentUser = userSession.currentUser
-                self.loginState = .loggedIn
-                self.isLoggedIn = true
-            }
+            try await Task.sleep(nanoseconds: 2_000_000_000)
+            loggedInUser = try await repository.login(with: userName, password: password)
+            loginState = .loggedIn
         } catch {
-            loginState = .failed(error: error)
-            hasError = true
-            errorMessage = error.localizedDescription
+            loginState = .error(message: error.localizedDescription)
         }
     }
 }

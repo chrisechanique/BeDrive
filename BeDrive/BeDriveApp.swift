@@ -7,6 +7,7 @@
 
 import SwiftUI
 import APIClient
+import FileRepository
 
 @main
 struct BeDriveApp: App {

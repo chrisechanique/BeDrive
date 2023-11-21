@@ -7,30 +7,31 @@
 
 import Foundation
 
-class AsyncLoadableViewModel<SomeData> : ObservableObject, DataLoadable {
+// Generic view model that supports asynchronous data loading and updates its state accordingly.
+
+class AsyncLoadableViewModel<SomeData>: ObservableObject, DataLoadable {
     @MainActor @Published public var dataState = DataLoadingState.empty(message: nil)
     @MainActor @Published public var data: SomeData?
     
+    // Asynchronous function to fetch data.
     private let fetchData: () async throws -> SomeData
     
+    // Initializes the view model with the asynchronous data fetch function.
     init(fetchData: @escaping () async throws -> SomeData) {
         self.fetchData = fetchData
     }
     
-    @MainActor public func fetch() {
-        if self.dataState != .resolved {
-            self.dataState = .loading(message: "Loading...")
+    // Initiates the data fetching process.
+    @MainActor
+    public func load() async {
+        if dataState != .resolved {
+            dataState = .loading(message: "Loading...")
         }
-        Task {
-            do{
-                let data = try await fetchData()
-                DispatchQueue.main.async {
-                    self.data = data
-                    self.dataState = .resolved
-                }
-            } catch {
-                self.dataState = .error(message: error.localizedDescription)
-            }
+        do {
+            data = try await fetchData()
+            dataState = .resolved
+        } catch {
+            dataState = .error(message: error.localizedDescription)
         }
     }
 }

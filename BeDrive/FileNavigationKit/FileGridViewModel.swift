@@ -7,6 +7,9 @@
 
 import Foundation
 import AsyncView
+import FileModels
+import FileCache
+import FileRepository
 
 class FileGridViewModel: ObservableObject, DataLoadable {
     @MainActor @Published var fileItems: [any FileItem] = []
@@ -24,7 +27,7 @@ class FileGridViewModel: ObservableObject, DataLoadable {
     
     let folder: Folder
     let repository: FileRepository
-    var fileStore: FileStore?
+    var fileCache: FileCache?
     
     init(folder: Folder, repository: FileRepository) {
         self.folder = folder
@@ -32,25 +35,24 @@ class FileGridViewModel: ObservableObject, DataLoadable {
     }
     
     func subscribeToFileUpdates() async {
-        for await items in await self.repository.getFileStore(for: folder).$files.values {
+        for await items in await repository.getFileCache(for: folder).$files.values {
             await MainActor.run(body: {
-                self.fileItems = items
-                self.dataState = items.count == 0 ? .empty(message: "Folder is empty") : .resolved
+                fileItems = items
+                dataState = items.count == 0 ? .empty(message: "Folder is empty") : .resolved
             })
         }
     }
     
-    @MainActor func fetch() {
+    @MainActor
+    func load() async {
         // Set the loading state only if data has not been resolved
-        if self.fileItems.count == 0 {
-            self.dataState = .loading(message: "Loading...")
+        if fileItems.count == 0 {
+            dataState = .loading(message: "Loading...")
         }
-        Task {
-            do {
-                let _ = try await repository.fetchFiles(in: folder)
-            } catch {
-                self.dataState = .error(message: error.localizedDescription)
-            }
+        do {
+            let _ = try await repository.fetchFiles(in: folder)
+        } catch {
+            dataState = .error(message: error.localizedDescription)
         }
         Task {
             await subscribeToFileUpdates()

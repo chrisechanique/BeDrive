@@ -1,7 +1,7 @@
 import XCTest
-@testable import AsyncView
+@testable import FileRepository
 
-final class AsyncViewTests: XCTestCase {
+final class FileRepositoryTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

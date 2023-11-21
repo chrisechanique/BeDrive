@@ -7,16 +7,20 @@
 
 import SwiftUI
 
-public struct AsyncLoadableView<ContentView, ViewModel> : View where ContentView : View, ViewModel : DataLoadable {
+// Generic SwiftUI view that handles the presentation of data loading states.
+public struct AsyncLoadableView<ContentView, ViewModel>: View where ContentView: View, ViewModel: DataLoadable {
     @ObservedObject var viewModel: ViewModel
     
+    // Closure to build the main content of the view.
     let contentView: () -> ContentView
     
+    // Initializes the view with a view model and content view builder.
     public init(viewModel: ViewModel, @ViewBuilder contentView: @escaping () -> ContentView) {
         self.viewModel = viewModel
         self.contentView = contentView
     }
     
+    // Body of the view, presenting the main content and handling different data loading states.
     public var body: some View {
         ZStack {
             contentView()
@@ -25,13 +29,13 @@ public struct AsyncLoadableView<ContentView, ViewModel> : View where ContentView
                 if let message {
                     VStack {
                         Text(message)
-                            .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+                            .font(.largeTitle)
                             .foregroundColor(Color.gray)
                     }
                 }
             case .loading(let message):
                 ProgressView(message)
-                                    .progressViewStyle(CircularProgressViewStyle())
+                    .progressViewStyle(CircularProgressViewStyle())
             case .resolved:
                 Spacer()
             case .error(let message):
@@ -46,9 +50,7 @@ public struct AsyncLoadableView<ContentView, ViewModel> : View where ContentView
             }
         }
         .task {
-            viewModel.fetch()
+            await viewModel.load()
         }
     }
-    
-    
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 import AsyncView
 import APIClient
+import FileModels
+import FileRepository
 
 struct FileGridView: View {
     @ObservedObject var viewModel: FileGridViewModel

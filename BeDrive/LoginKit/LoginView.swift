@@ -7,6 +7,7 @@
 
 import SwiftUI
 import APIClient
+import FileRepository
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
@@ -25,19 +26,17 @@ struct LoginView: View {
                 PasswordInput()
             }
             LoginButton()
+            ErrorText()
+            Spacer()
             Spacer()
         }
         .padding(40.0)
         .background(Color.background)
-        .fullScreenCover(isPresented: $viewModel.isLoggedIn){
-            if let currentUser = viewModel.currentUser {
+        .fullScreenCover(isPresented: .constant($viewModel.loggedInUser.wrappedValue != nil)){
+            if let currentUser = viewModel.loggedInUser {
                 let viewModel = FileNavigationViewModel(currentUser: currentUser, repository: viewModel.repository)
                 FileNavigationView(viewModel: viewModel)
             }
-        }
-        .alert("Error", isPresented: $viewModel.hasError) {
-        } message: {
-            Text(viewModel.errorMessage)
         }
     }
     
@@ -79,16 +78,28 @@ struct LoginView: View {
         }
         .background(Color.accentColor)
         .cornerRadius(5)
+        .disabled(viewModel.loginDisabled)
     }
-    
-    
     
     private func TitleView() -> some View {
         Text("BeDrive://")
-            .font(.largeTitle)
+            .font(.system(size: 46))
             .fontWeight(.bold)
             .foregroundStyle(Color.white)
         
+    }
+    
+    private func ErrorText() -> (some View)? {
+        switch viewModel.loginState {
+        case .error(let message):
+            Text(message)
+                .multilineTextAlignment(.leading)
+                .foregroundStyle(Color.red)
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        default:
+            nil
+        }
     }
 }
 

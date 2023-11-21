@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FileModels
 
 class FileCellViewModel: ObservableObject {
     enum Icon: String {

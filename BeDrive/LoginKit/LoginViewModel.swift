@@ -33,10 +33,12 @@ class LoginViewModel: ObservableObject {
     @Published var loggedInUser: User?
     @Published var loginDisabled = false
     
-    let repository: FileRepository
+    let authentication: Authentication
+    let router: any Routing
 
-    init(repository: FileRepository) {
-        self.repository = repository
+    init(authentication: Authentication, router: any Routing) {
+        self.authentication = authentication
+        self.router = router
     }
     
     @MainActor
@@ -45,7 +47,10 @@ class LoginViewModel: ObservableObject {
         loginState = .loading
         do {
             try await Task.sleep(nanoseconds: 500_000_000)
-            loggedInUser = try await repository.login(with: userName, password: password)
+            let user = try await authentication.login(with: userName, password: password)
+            loggedInUser = user
+            router.destination = .fileHome(user: user)
+            router.isLoggedIn = true
             loginState = .loggedIn
         } catch {
             loginState = .error(message: error.localizedDescription)

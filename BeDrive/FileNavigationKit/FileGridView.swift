@@ -12,6 +12,8 @@ import FileModels
 import FileRepository
 
 struct FileGridView: View {
+    @EnvironmentObject var fileNavViewModel: FileNavigationViewModel
+    
     @StateObject var viewModel: FileGridViewModel
     init(viewModel: FileGridViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -139,7 +141,7 @@ extension FileGridViewModel {
 #Preview {
     let folder = Folder(id: "1", name: "Documents", modificationDate: Date.now, parentId: nil)
     let user = User(firstName: "noel", lastName: "smith", userName: "noel", password: "foobar", rootFolder: folder)
-    let viewModel = FileNavigationViewModel(currentUser: user, repository: BeDriveRepository(apiClient: BaseAPIClient()))
+    let viewModel = FileNavigationViewModel(currentUser: user, repository: BeDriveRepository(user: user, apiClient: BaseAPIClient()))
     
-    return FileNavigationView(viewModel: viewModel)
+    return FileNavigationView<BeDriveAppRouter>(viewModel: viewModel)
 }

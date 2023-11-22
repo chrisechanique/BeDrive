@@ -27,13 +27,14 @@ class UserActionsViewModel: ObservableObject {
     
     @MainActor
     func logout() async {
-        do {
-            _ = try await repository.logout()
-            showUserActions = false
-        } catch {
-            showAlert = true
-            errorMessage = error.localizedDescription
-        }
+        
+//        do {
+//            _ = try await repository.logout()
+//            showUserActions = false
+//        } catch {
+//            showAlert = true
+//            errorMessage = error.localizedDescription
+//        }
     }
 }
 

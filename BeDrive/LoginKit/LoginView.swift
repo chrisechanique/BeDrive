@@ -9,35 +9,37 @@ import SwiftUI
 import APIClient
 import FileRepository
 
-struct LoginView: View {
+struct LoginView<Router>: View where Router: Routing {
     @StateObject var viewModel: LoginViewModel
+    @EnvironmentObject var router: Router
     
     init(viewModel: LoginViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
-        VStack(spacing: 20) {
-            Spacer()
-            TitleView()
-            Spacer()
-            VStack {
-                EmailInput()
-                PasswordInput()
+        NavigationStack {
+            VStack(spacing: 20) {
+                Spacer()
+                TitleView()
+                Spacer()
+                VStack {
+                    EmailInput()
+                    PasswordInput()
+                }
+                LoginButton()
+                ErrorText()
+                Spacer()
+                Spacer()
             }
-            LoginButton()
-            ErrorText()
-            Spacer()
-            Spacer()
         }
         .padding(40.0)
         .background(Color.background)
-        .fullScreenCover(isPresented: .constant($viewModel.loggedInUser.wrappedValue != nil)){
+        .navigationDestination(isPresented: .constant(viewModel.loggedInUser != nil), destination: {
             if let currentUser = viewModel.loggedInUser {
-                let viewModel = FileNavigationViewModel(currentUser: currentUser, repository: viewModel.repository)
-                FileNavigationView(viewModel: viewModel)
+                router.view(for: .fileHome(user: currentUser))
             }
-        }
+        })
     }
     
     private func EmailInput() -> some View {
@@ -51,6 +53,14 @@ struct LoginView: View {
     private func PasswordInput() -> some View {
         SecureField("Password", text: $viewModel.password)
             .textFieldStyle(.roundedBorder)
+    }
+    
+    private func NavLinkLoginButton() -> some View {
+        navigationDestination(isPresented: .constant(viewModel.loggedInUser != nil)) {
+            if let currentUser = viewModel.loggedInUser {
+                router.view(for: .fileHome(user: currentUser))
+            }
+        }
     }
     
     private func LoginButton() -> some View {
@@ -103,7 +113,6 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: BaseAPIClient()))
-    return LoginView(viewModel: viewModel)
+#Preview {    let viewModel = LoginViewModel(authentication: BeDriveAuthentication(apiClient: BaseAPIClient()), router: BeDriveAppRouter())
+    return LoginView<BeDriveAppRouter>(viewModel: viewModel)
 }

@@ -9,7 +9,8 @@ import SwiftUI
 import FileModels
 import FileRepository
 
-struct UserActionsButton: View {
+struct UserActionsButton<Router>: View where Router: Routing {
+    @EnvironmentObject var router: Router
     @StateObject var viewModel: UserActionsViewModel
     
     init(user: User, repository: any FileRepository) {
@@ -40,8 +41,10 @@ struct UserActionsButton: View {
             title: Text(viewModel.userActionText),
             buttons: [
                 .default(Text("Log out"), action: {
+                    router.destination = .login
                     Task {
                         await viewModel.logout()
+                        router.destination = .login
                     }
                 }),
                 .cancel()

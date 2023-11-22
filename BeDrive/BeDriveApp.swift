@@ -13,8 +13,7 @@ import FileRepository
 struct BeDriveApp: App {
     var body: some Scene {
         WindowGroup {
-            let viewModel = LoginViewModel(repository: BeDriveRepository(apiClient: BaseAPIClient()))
-            LoginView(viewModel: viewModel)
+            AppRootView(router: BeDriveAppRouter())
         }
     }
 }

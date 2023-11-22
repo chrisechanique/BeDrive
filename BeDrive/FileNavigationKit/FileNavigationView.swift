@@ -20,7 +20,7 @@ class FileNavigationViewModel: ObservableObject {
     }
 }
 
-struct FileNavigationView: View {
+struct FileNavigationView<Router>: View where Router: Routing {
     @StateObject var viewModel: FileNavigationViewModel
     
     init(viewModel: FileNavigationViewModel) {
@@ -35,10 +35,11 @@ struct FileNavigationView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    UserActionsButton(user: self.viewModel.currentUser, repository: viewModel.repository)
+                    UserActionsButton<Router>(user: self.viewModel.currentUser, repository: viewModel.repository)
                 }
             }
         }
         .preferredColorScheme(.dark)
+        .environmentObject(viewModel)
     }
 }

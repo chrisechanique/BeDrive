@@ -9,12 +9,7 @@ import Foundation
 import FileCache
 import FileModels
 
-public protocol Authentication {
-    func login(with userName: String, password: String) async throws -> User
-    func logout() async throws
-}
-
-public protocol FileRepository: Authentication {
+public protocol FileRepository {
     func getFileCache(for folder: Folder) async -> FileCache
     func fetchFiles(in folder: Folder) async throws -> FileCache
     func createFolder(named name: String, in parentFolder: Folder) async throws -> Folder

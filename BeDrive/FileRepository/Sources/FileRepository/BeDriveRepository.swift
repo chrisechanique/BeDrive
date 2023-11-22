@@ -15,12 +15,13 @@ public actor BeDriveRepository: FileRepository {
     internal var fileCaches = [String : FileCache]()
     internal var dataCache = DataCache()
     private let apiClient: APIClient
-    private var credentials: BeDriveAPIEndpoint.Credentials?
-    private var user: User?
+    private var credentials: BeDriveAPIEndpoint.Credentials {
+        BeDriveAPIEndpoint.Credentials(userName: user.userName, password: user.password)
+    }
+    private let user: User
     
     public enum RepositoryError: Error {
         case unknownError
-        case noCredentials
         case invalidFileItem
         case missingFileCache
         
@@ -28,8 +29,6 @@ public actor BeDriveRepository: FileRepository {
             switch self {
             case .unknownError:
                 return "An unknown error occurred."
-            case .noCredentials:
-                return "Credentials are required for requests"
             case .invalidFileItem:
                 return "File item does not have valid data"
             case .missingFileCache:
@@ -38,27 +37,12 @@ public actor BeDriveRepository: FileRepository {
         }
     }
     
-    public init(apiClient: APIClient) {
+    public init(user: User, apiClient: APIClient = BaseAPIClient()) {
+        self.user = user
         self.apiClient = apiClient
     }
     
-    public func login(with userName: String, password: String) async throws -> User {
-        let credentials = BeDriveAPIEndpoint.Credentials(userName: userName, password: password)
-        let user = try await apiClient.request(BeDriveAPIEndpoint.currentUser(credentials: credentials)) as BeDriveAPIEndpoint.User
-        let folder = Folder(id: user.rootItem.id, name: user.rootItem.name, modificationDate: user.rootItem.modificationDate, parentId: user.rootItem.parentId)
-        let currentUser = User(firstName: user.firstName, lastName: user.lastName, userName:userName, password: password, rootFolder: folder)
-        self.credentials = BeDriveAPIEndpoint.Credentials(userName: userName, password: password)
-        self.user = currentUser
-        return currentUser
-    }
-    
-    public func logout() async {
-        self.credentials = nil
-        await self.dataCache.clearAll()
-    }
-    
     public func fetchFiles(in folder: Folder) async throws -> FileCache {
-        guard let credentials else { throw RepositoryError.noCredentials }
         let items = try await apiClient.request(BeDriveAPIEndpoint.listFolderContent(id: folder.id, credentials: credentials)) as [BeDriveAPIEndpoint.Item]
         let files = items.compactMap { $0.mapToFilableItem() }
         
@@ -78,7 +62,6 @@ public actor BeDriveRepository: FileRepository {
     }
     
     public func createFolder(named name: String, in parentFolder: Folder) async throws -> Folder {
-        guard let credentials else { throw RepositoryError.noCredentials }
         let item = try await apiClient.request(BeDriveAPIEndpoint.createFolder(id: parentFolder.id, folderName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
         let newFolder = Folder(id: item.id, name: item.name, modificationDate: item.modificationDate, parentId: item.parentId)
         
@@ -92,7 +75,6 @@ public actor BeDriveRepository: FileRepository {
         if let data = await dataCache.loadData(for: dataItem.id) {
             return data
         }
-        guard let credentials else { throw RepositoryError.noCredentials }
         
         do {
             let data = try await apiClient.downloadData(from: BeDriveAPIEndpoint.downloadItem(id: dataItem.id, credentials: credentials))
@@ -104,7 +86,6 @@ public actor BeDriveRepository: FileRepository {
     }
     
     public func createDataItem(in folder: Folder, name: String, data: Data) async throws -> any DataItem {
-        guard let credentials else { throw RepositoryError.noCredentials }
         let item = try await apiClient.upload(data, to: BeDriveAPIEndpoint.createItem(folderId: folder.id, itemName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
         guard let dataItem = item.mapToFilableItem() as? any DataItem else {
             throw RepositoryError.invalidFileItem
@@ -117,7 +98,6 @@ public actor BeDriveRepository: FileRepository {
     }
     
     public func deleteItem(_ item: any FileItem) async throws {
-        guard let credentials else { throw RepositoryError.noCredentials }
         do {
             _ = try await apiClient.request(BeDriveAPIEndpoint.deleteItem(id: item.id, credentials: credentials)) as BeDriveAPIEndpoint.Item
         } catch {
@@ -154,5 +134,33 @@ extension BeDriveAPIEndpoint.Item {
         case .text(_):
             return TextFile(id: id, name: name, modificationDate: modificationDate, parentId: parentId, size: size)
         }
+    }
+}
+
+
+public protocol Authentication {
+    func login(with userName: String, password: String) async throws -> User
+    func logout() async throws
+}
+
+public actor BeDriveAuthentication: Authentication {
+    private let apiClient: APIClient
+    private var loggedInUser: User?
+    
+    public init(apiClient: APIClient = BaseAPIClient()) {
+        self.apiClient = apiClient
+    }
+    
+    public func login(with userName: String, password: String) async throws -> User {
+        let credentials = BeDriveAPIEndpoint.Credentials(userName: userName, password: password)
+        let user = try await apiClient.request(BeDriveAPIEndpoint.currentUser(credentials: credentials)) as BeDriveAPIEndpoint.User
+        let folder = Folder(id: user.rootItem.id, name: user.rootItem.name, modificationDate: user.rootItem.modificationDate, parentId: user.rootItem.parentId)
+        let currentUser = User(firstName: user.firstName, lastName: user.lastName, userName:userName, password: password, rootFolder: folder)
+        self.loggedInUser = currentUser
+        return currentUser
+    }
+    
+    public func logout() async throws {
+        self.loggedInUser = nil
     }
 }

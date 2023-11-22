@@ -64,7 +64,7 @@ public struct TextFile: DataItem {
     }
 }
 
-public struct User {
+public struct User: Equatable {
     public let firstName: String
     public let lastName: String
     public let userName: String

@@ -13,7 +13,7 @@ struct AppRootView<Router>: View where Router: Routing {
     var body: some View {
         // Show login screen as base view
         router.view(for: .login)
-            .fullScreenCover(isPresented: $router.isLoggedIn){
+            .fullScreenCover(isPresented: .constant(router.destination != .login)){
                 // Present file home view as full screen cover
                 router.view(for: router.destination)
             }

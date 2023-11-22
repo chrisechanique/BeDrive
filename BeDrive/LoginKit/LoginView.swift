@@ -35,11 +35,6 @@ struct LoginView<Router>: View where Router: Routing {
         }
         .padding(40.0)
         .background(Color.background)
-        .navigationDestination(isPresented: .constant(viewModel.loggedInUser != nil), destination: {
-            if let currentUser = viewModel.loggedInUser {
-                router.view(for: .fileHome(user: currentUser))
-            }
-        })
     }
     
     private func EmailInput() -> some View {

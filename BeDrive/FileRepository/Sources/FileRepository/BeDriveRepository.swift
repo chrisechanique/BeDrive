@@ -11,6 +11,23 @@ import APIClient
 import FileModels
 import FileCache
 
+public enum RepositoryError: Error {
+    case unknownError
+    case invalidFileItem
+    case missingFileCache
+    
+    var localizedDescription: String {
+        switch self {
+        case .unknownError:
+            return "An unknown error occurred."
+        case .invalidFileItem:
+            return "File item does not have valid data"
+        case .missingFileCache:
+            return "File store is missing for file"
+        }
+    }
+}
+
 public actor BeDriveRepository: FileRepository {
     internal var fileCaches = [String : FileCache]()
     internal var dataCache = DataCache()
@@ -19,23 +36,6 @@ public actor BeDriveRepository: FileRepository {
         BeDriveAPIEndpoint.Credentials(userName: user.userName, password: user.password)
     }
     private let user: User
-    
-    public enum RepositoryError: Error {
-        case unknownError
-        case invalidFileItem
-        case missingFileCache
-        
-        var localizedDescription: String {
-            switch self {
-            case .unknownError:
-                return "An unknown error occurred."
-            case .invalidFileItem:
-                return "File item does not have valid data"
-            case .missingFileCache:
-                return "File store is missing for file"
-            }
-        }
-    }
     
     public init(user: User, apiClient: APIClient = BaseAPIClient()) {
         self.user = user

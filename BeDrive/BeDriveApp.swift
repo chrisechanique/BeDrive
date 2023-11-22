@@ -13,6 +13,7 @@ struct BeDriveApp: App {
     var body: some Scene {
         WindowGroup {
             AppRouterView(router: BeDriveAppRouter())
+                .preferredColorScheme(.dark)
         }
     }
 }

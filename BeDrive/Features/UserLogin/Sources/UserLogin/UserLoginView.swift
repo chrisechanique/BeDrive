@@ -25,7 +25,7 @@ public struct UserLoginView<Router>: View where Router: Routing {
                 TitleView()
                 Spacer()
                 VStack {
-                    EmailInput()
+                    UsernameInput()
                     PasswordInput()
                 }
                 LoginButton()
@@ -35,12 +35,12 @@ public struct UserLoginView<Router>: View where Router: Routing {
             }
         }
         .padding(40.0)
-        .background(Color.black)
+        .preferredColorScheme(.dark)
     }
     
-    private func EmailInput() -> some View {
+    private func UsernameInput() -> some View {
         TextField("Username", text: $viewModel.userName)
-            .keyboardType(.emailAddress)
+            .keyboardType(.namePhonePad)
             .disableAutocorrection(true)
             .autocapitalization(.none)
             .textFieldStyle(.roundedBorder)
@@ -80,10 +80,15 @@ public struct UserLoginView<Router>: View where Router: Routing {
     }
     
     private func TitleView() -> some View {
-        Text("BeDrive://")
-            .font(.system(size: 46))
-            .fontWeight(.bold)
-            .foregroundStyle(Color.white)
+        VStack(spacing: 5) {
+            Text("BeDrive://")
+                .font(.system(size: 46))
+                .fontWeight(.bold)
+                .foregroundStyle(Color.white)
+            Text("Your files for real.")
+                .font(.system(size: 26))
+                .foregroundStyle(Color.white.opacity(0.6))
+        }
         
     }
     

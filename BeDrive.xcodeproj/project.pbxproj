@@ -3,32 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F31C88EA2B0E2DAF00F2785C /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88E92B0E2DAF00F2785C /* DataCache */; };
+		F31C88ED2B0E2DB900F2785C /* FileCache in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88EC2B0E2DB900F2785C /* FileCache */; };
+		F31C88F02B0E2DC200F2785C /* FileModels in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88EF2B0E2DC200F2785C /* FileModels */; };
+		F31C88F32B0E2DD000F2785C /* FileRepository in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88F22B0E2DD000F2785C /* FileRepository */; };
+		F31C88F62B0E2DDB00F2785C /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88F52B0E2DDB00F2785C /* APIClient */; };
+		F31C88F92B0E2DE500F2785C /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88F82B0E2DE500F2785C /* Authentication */; };
+		F31C88FC2B0E2DF000F2785C /* NavigationRouter in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88FB2B0E2DF000F2785C /* NavigationRouter */; };
+		F31C88FF2B0E2E0100F2785C /* AsyncView in Frameworks */ = {isa = PBXBuildFile; productRef = F31C88FE2B0E2E0100F2785C /* AsyncView */; };
+		F31C89022B0E2E0C00F2785C /* FileNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F31C89012B0E2E0C00F2785C /* FileNavigation */; };
+		F31C89052B0E2E1800F2785C /* UserLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F31C89042B0E2E1800F2785C /* UserLogin */; };
 		F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */; };
 		F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */; };
 		F37B48EE2B0BB6D300511BE5 /* BeDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */; };
 		F37B48F82B0BB6D300511BE5 /* BeDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */; };
 		F37B48FA2B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */; };
 		F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B49242B0BB72700511BE5 /* Assets.xcassets */; };
-		F37B49312B0BBC2300511BE5 /* AsyncView in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49302B0BBC2300511BE5 /* AsyncView */; };
-		F37B49352B0BC34A00511BE5 /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49342B0BC34A00511BE5 /* DataCache */; };
-		F37B493C2B0BE9A300511BE5 /* AsyncView in Resources */ = {isa = PBXBuildFile; fileRef = F37B493B2B0BE9A300511BE5 /* AsyncView */; };
-		F37B493F2B0BE9DF00511BE5 /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = F37B493E2B0BE9DF00511BE5 /* APIClient */; };
-		F37B49422B0BE9ED00511BE5 /* AsyncView in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49412B0BE9ED00511BE5 /* AsyncView */; };
-		F37B49452B0BFFB800511BE5 /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49442B0BFFB800511BE5 /* DataCache */; };
-		F37B49492B0C008400511BE5 /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49482B0C008400511BE5 /* APIClient */; };
-		F37B49512B0C0AC800511BE5 /* FileModels in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49502B0C0AC800511BE5 /* FileModels */; };
-		F37B49552B0C0D2400511BE5 /* FileCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49542B0C0D2400511BE5 /* FileCache */; };
-		F37B49592B0C0EF400511BE5 /* FileRepository in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49582B0C0EF400511BE5 /* FileRepository */; };
-		F37B495B2B0C110000511BE5 /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = F37B495A2B0C110000511BE5 /* DataCache */; };
-		F37B49722B0E0E7A00511BE5 /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49712B0E0E7A00511BE5 /* Authentication */; };
 		F37B49792B0E11D100511BE5 /* BeDriveAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49782B0E11D100511BE5 /* BeDriveAppRouter.swift */; };
-		F37B497C2B0E121500511BE5 /* NavigationRouter in Frameworks */ = {isa = PBXBuildFile; productRef = F37B497B2B0E121500511BE5 /* NavigationRouter */; };
-		F37B49802B0E183500511BE5 /* UserLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F37B497F2B0E183500511BE5 /* UserLogin */; };
-		F37B49862B0E1D9400511BE5 /* FileNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F37B49852B0E1D9400511BE5 /* FileNavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +62,9 @@
 		F37B49562B0C0ECA00511BE5 /* FileRepository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FileRepository; sourceTree = "<group>"; };
 		F37B49782B0E11D100511BE5 /* BeDriveAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveAppRouter.swift; sourceTree = "<group>"; };
 		F37B497D2B0E16EC00511BE5 /* UserLogin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UserLogin; sourceTree = "<group>"; };
-		F37B49832B0E1C9900511BE5 /* FileNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FileNavigation; path = BeDrive/FileNavigation; sourceTree = SOURCE_ROOT; };
+		F37B49832B0E1C9900511BE5 /* FileNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FileNavigation; path = BeDrive/Features/FileNavigation; sourceTree = SOURCE_ROOT; };
+		F37B49902B0E20E400511BE5 /* Authentication */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authentication; sourceTree = "<group>"; };
+		F37B49942B0E27C700511BE5 /* NavigationRouter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NavigationRouter; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,18 +72,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37B49512B0C0AC800511BE5 /* FileModels in Frameworks */,
-				F37B49552B0C0D2400511BE5 /* FileCache in Frameworks */,
-				F37B49592B0C0EF400511BE5 /* FileRepository in Frameworks */,
-				F37B49312B0BBC2300511BE5 /* AsyncView in Frameworks */,
-				F37B49802B0E183500511BE5 /* UserLogin in Frameworks */,
-				F37B493F2B0BE9DF00511BE5 /* APIClient in Frameworks */,
-				F37B497C2B0E121500511BE5 /* NavigationRouter in Frameworks */,
-				F37B49422B0BE9ED00511BE5 /* AsyncView in Frameworks */,
-				F37B49352B0BC34A00511BE5 /* DataCache in Frameworks */,
-				F37B495B2B0C110000511BE5 /* DataCache in Frameworks */,
-				F37B49862B0E1D9400511BE5 /* FileNavigation in Frameworks */,
-				F37B49722B0E0E7A00511BE5 /* Authentication in Frameworks */,
+				F31C88EA2B0E2DAF00F2785C /* DataCache in Frameworks */,
+				F31C89052B0E2E1800F2785C /* UserLogin in Frameworks */,
+				F31C89022B0E2E0C00F2785C /* FileNavigation in Frameworks */,
+				F31C88FC2B0E2DF000F2785C /* NavigationRouter in Frameworks */,
+				F31C88FF2B0E2E0100F2785C /* AsyncView in Frameworks */,
+				F31C88F02B0E2DC200F2785C /* FileModels in Frameworks */,
+				F31C88F92B0E2DE500F2785C /* Authentication in Frameworks */,
+				F31C88F62B0E2DDB00F2785C /* APIClient in Frameworks */,
+				F31C88F32B0E2DD000F2785C /* FileRepository in Frameworks */,
+				F31C88ED2B0E2DB900F2785C /* FileCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37B49492B0C008400511BE5 /* APIClient in Frameworks */,
-				F37B49452B0BFFB800511BE5 /* DataCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +102,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F31C88DB2B0E29C600F2785C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F37B493B2B0BE9A300511BE5 /* AsyncView */,
+				F37B49942B0E27C700511BE5 /* NavigationRouter */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F31C88DC2B0E2B6A00F2785C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F37B493A2B0BE95200511BE5 /* APIClient */,
+				F37B49902B0E20E400511BE5 /* Authentication */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F31C88DD2B0E2B9600F2785C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F37B49562B0C0ECA00511BE5 /* FileRepository */,
+				F37B49522B0C0C3E00511BE5 /* FileCache */,
+				F37B49322B0BC24800511BE5 /* DataCache */,
+				F37B494E2B0C0A8400511BE5 /* FileModels */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		F37B48D02B0BB6D200511BE5 = {
 			isa = PBXGroup;
 			children = (
@@ -133,14 +155,8 @@
 		F37B48DB2B0BB6D200511BE5 /* BeDrive */ = {
 			isa = PBXGroup;
 			children = (
-				F37B49562B0C0ECA00511BE5 /* FileRepository */,
-				F37B49522B0C0C3E00511BE5 /* FileCache */,
-				F37B494E2B0C0A8400511BE5 /* FileModels */,
-				F37B493B2B0BE9A300511BE5 /* AsyncView */,
-				F37B493A2B0BE95200511BE5 /* APIClient */,
-				F37B49322B0BC24800511BE5 /* DataCache */,
-				F37B49832B0E1C9900511BE5 /* FileNavigation */,
-				F37B497D2B0E16EC00511BE5 /* UserLogin */,
+				F37B498B2B0E206D00511BE5 /* Core */,
+				F37B498A2B0E201600511BE5 /* Features */,
 				F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */,
 				F37B49782B0E11D100511BE5 /* BeDriveAppRouter.swift */,
 				F37B492D2B0BB84400511BE5 /* Info.plist */,
@@ -182,6 +198,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F37B498A2B0E201600511BE5 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F37B49832B0E1C9900511BE5 /* FileNavigation */,
+				F37B497D2B0E16EC00511BE5 /* UserLogin */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		F37B498B2B0E206D00511BE5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F31C88DD2B0E2B9600F2785C /* Data */,
+				F31C88DC2B0E2B6A00F2785C /* Networking */,
+				F31C88DB2B0E29C600F2785C /* UI */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,18 +234,16 @@
 			);
 			name = BeDrive;
 			packageProductDependencies = (
-				F37B49302B0BBC2300511BE5 /* AsyncView */,
-				F37B49342B0BC34A00511BE5 /* DataCache */,
-				F37B493E2B0BE9DF00511BE5 /* APIClient */,
-				F37B49412B0BE9ED00511BE5 /* AsyncView */,
-				F37B49502B0C0AC800511BE5 /* FileModels */,
-				F37B49542B0C0D2400511BE5 /* FileCache */,
-				F37B49582B0C0EF400511BE5 /* FileRepository */,
-				F37B495A2B0C110000511BE5 /* DataCache */,
-				F37B49712B0E0E7A00511BE5 /* Authentication */,
-				F37B497B2B0E121500511BE5 /* NavigationRouter */,
-				F37B497F2B0E183500511BE5 /* UserLogin */,
-				F37B49852B0E1D9400511BE5 /* FileNavigation */,
+				F31C88E92B0E2DAF00F2785C /* DataCache */,
+				F31C88EC2B0E2DB900F2785C /* FileCache */,
+				F31C88EF2B0E2DC200F2785C /* FileModels */,
+				F31C88F22B0E2DD000F2785C /* FileRepository */,
+				F31C88F52B0E2DDB00F2785C /* APIClient */,
+				F31C88F82B0E2DE500F2785C /* Authentication */,
+				F31C88FB2B0E2DF000F2785C /* NavigationRouter */,
+				F31C88FE2B0E2E0100F2785C /* AsyncView */,
+				F31C89012B0E2E0C00F2785C /* FileNavigation */,
+				F31C89042B0E2E1800F2785C /* UserLogin */,
 			);
 			productName = BeDrive;
 			productReference = F37B48D92B0BB6D200511BE5 /* BeDrive.app */;
@@ -231,8 +264,6 @@
 			);
 			name = BeDriveTests;
 			packageProductDependencies = (
-				F37B49442B0BFFB800511BE5 /* DataCache */,
-				F37B49482B0C008400511BE5 /* APIClient */,
 			);
 			productName = BeDriveTests;
 			productReference = F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */;
@@ -289,6 +320,16 @@
 			);
 			mainGroup = F37B48D02B0BB6D200511BE5;
 			packageReferences = (
+				F31C88E82B0E2DAF00F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/DataCache" */,
+				F31C88EB2B0E2DB900F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/FileCache" */,
+				F31C88EE2B0E2DC200F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/FileModels" */,
+				F31C88F12B0E2DD000F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/FileRepository" */,
+				F31C88F42B0E2DDB00F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Networking/APIClient" */,
+				F31C88F72B0E2DE500F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Networking/Authentication" */,
+				F31C88FA2B0E2DF000F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/UI/NavigationRouter" */,
+				F31C88FD2B0E2E0100F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/UI/AsyncView" */,
+				F31C89002B0E2E0C00F2785C /* XCLocalSwiftPackageReference "BeDrive/Features/FileNavigation" */,
+				F31C89032B0E2E1800F2785C /* XCLocalSwiftPackageReference "BeDrive/Features/UserLogin" */,
 			);
 			productRefGroup = F37B48DA2B0BB6D200511BE5 /* Products */;
 			projectDirPath = "";
@@ -308,7 +349,6 @@
 			files = (
 				F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */,
 				F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */,
-				F37B493C2B0BE9A300511BE5 /* AsyncView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,62 +709,89 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		F31C88E82B0E2DAF00F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/DataCache" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/Data/DataCache;
+		};
+		F31C88EB2B0E2DB900F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/FileCache" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/Data/FileCache;
+		};
+		F31C88EE2B0E2DC200F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/FileModels" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/Data/FileModels;
+		};
+		F31C88F12B0E2DD000F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Data/FileRepository" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/Data/FileRepository;
+		};
+		F31C88F42B0E2DDB00F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Networking/APIClient" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/Networking/APIClient;
+		};
+		F31C88F72B0E2DE500F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/Networking/Authentication" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/Networking/Authentication;
+		};
+		F31C88FA2B0E2DF000F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/UI/NavigationRouter" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/UI/NavigationRouter;
+		};
+		F31C88FD2B0E2E0100F2785C /* XCLocalSwiftPackageReference "BeDrive/Core/UI/AsyncView" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Core/UI/AsyncView;
+		};
+		F31C89002B0E2E0C00F2785C /* XCLocalSwiftPackageReference "BeDrive/Features/FileNavigation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Features/FileNavigation;
+		};
+		F31C89032B0E2E1800F2785C /* XCLocalSwiftPackageReference "BeDrive/Features/UserLogin" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BeDrive/Features/UserLogin;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		F37B49302B0BBC2300511BE5 /* AsyncView */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AsyncView;
-		};
-		F37B49342B0BC34A00511BE5 /* DataCache */ = {
+		F31C88E92B0E2DAF00F2785C /* DataCache */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DataCache;
 		};
-		F37B493E2B0BE9DF00511BE5 /* APIClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = APIClient;
-		};
-		F37B49412B0BE9ED00511BE5 /* AsyncView */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AsyncView;
-		};
-		F37B49442B0BFFB800511BE5 /* DataCache */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DataCache;
-		};
-		F37B49482B0C008400511BE5 /* APIClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = APIClient;
-		};
-		F37B49502B0C0AC800511BE5 /* FileModels */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = FileModels;
-		};
-		F37B49542B0C0D2400511BE5 /* FileCache */ = {
+		F31C88EC2B0E2DB900F2785C /* FileCache */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FileCache;
 		};
-		F37B49582B0C0EF400511BE5 /* FileRepository */ = {
+		F31C88EF2B0E2DC200F2785C /* FileModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileModels;
+		};
+		F31C88F22B0E2DD000F2785C /* FileRepository */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FileRepository;
 		};
-		F37B495A2B0C110000511BE5 /* DataCache */ = {
+		F31C88F52B0E2DDB00F2785C /* APIClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DataCache;
+			productName = APIClient;
 		};
-		F37B49712B0E0E7A00511BE5 /* Authentication */ = {
+		F31C88F82B0E2DE500F2785C /* Authentication */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Authentication;
 		};
-		F37B497B2B0E121500511BE5 /* NavigationRouter */ = {
+		F31C88FB2B0E2DF000F2785C /* NavigationRouter */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NavigationRouter;
 		};
-		F37B497F2B0E183500511BE5 /* UserLogin */ = {
+		F31C88FE2B0E2E0100F2785C /* AsyncView */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = UserLogin;
+			productName = AsyncView;
 		};
-		F37B49852B0E1D9400511BE5 /* FileNavigation */ = {
+		F31C89012B0E2E0C00F2785C /* FileNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FileNavigation;
+		};
+		F31C89042B0E2E1800F2785C /* UserLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

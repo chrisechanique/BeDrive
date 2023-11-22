@@ -7,17 +7,18 @@
 
 import SwiftUI
 import APIClient
-import FileRepository
+import Authentication
+import NavigationRouter
 
-struct LoginView<Router>: View where Router: Routing {
-    @StateObject var viewModel: LoginViewModel
+public struct UserLoginView<Router>: View where Router: Routing {
+    @StateObject var viewModel: UserLoginViewModel
     @EnvironmentObject var router: Router
     
-    init(viewModel: LoginViewModel) {
+    public init(viewModel: UserLoginViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
                 Spacer()
@@ -34,7 +35,7 @@ struct LoginView<Router>: View where Router: Routing {
             }
         }
         .padding(40.0)
-        .background(Color.background)
+        .background(Color.black)
     }
     
     private func EmailInput() -> some View {
@@ -48,14 +49,6 @@ struct LoginView<Router>: View where Router: Routing {
     private func PasswordInput() -> some View {
         SecureField("Password", text: $viewModel.password)
             .textFieldStyle(.roundedBorder)
-    }
-    
-    private func NavLinkLoginButton() -> some View {
-        navigationDestination(isPresented: .constant(viewModel.loggedInUser != nil)) {
-            if let currentUser = viewModel.loggedInUser {
-                router.view(for: .fileHome(user: currentUser))
-            }
-        }
     }
     
     private func LoginButton() -> some View {
@@ -108,6 +101,7 @@ struct LoginView<Router>: View where Router: Routing {
     }
 }
 
-#Preview {    let viewModel = LoginViewModel(authentication: BeDriveAuthentication(apiClient: BaseAPIClient()), router: BeDriveAppRouter())
-    return LoginView<BeDriveAppRouter>(viewModel: viewModel)
+#Preview {    
+    let viewModel = UserLoginViewModel(authentication: BeDriveAuthentication(apiClient: BaseAPIClient()), router: SimpleRouter())
+    return UserLoginView<SimpleRouter>(viewModel: viewModel)
 }

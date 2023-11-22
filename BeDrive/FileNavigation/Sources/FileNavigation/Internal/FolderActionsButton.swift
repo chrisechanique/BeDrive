@@ -32,7 +32,6 @@ struct FolderActionsButton: View {
                 guard let file = files.first else { return }
                 viewModel.selectedFileUrl = file
             case .failure(let error):
-                print(error)
                 viewModel.errorMessage = error.localizedDescription
             }
         }

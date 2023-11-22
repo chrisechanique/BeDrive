@@ -7,8 +7,8 @@
 
 import Foundation
 import AsyncView
-import FileModels
 import FileCache
+import FileModels
 import FileRepository
 
 class FileGridViewModel: ObservableObject, DataLoadable {

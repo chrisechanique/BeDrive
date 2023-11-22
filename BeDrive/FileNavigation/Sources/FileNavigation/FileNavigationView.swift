@@ -9,25 +9,16 @@ import SwiftUI
 import AsyncView
 import FileModels
 import FileRepository
+import NavigationRouter
 
-class FileNavigationViewModel: ObservableObject {
-    let currentUser: User
-    let repository: FileRepository
-    
-    init(currentUser: User, repository: FileRepository) {
-        self.currentUser = currentUser
-        self.repository = repository
-    }
-}
-
-struct FileNavigationView<Router>: View where Router: Routing {
+public struct FileNavigationView<Router>: View where Router: Routing {
     @StateObject var viewModel: FileNavigationViewModel
     
-    init(viewModel: FileNavigationViewModel) {
+    public init(viewModel: FileNavigationViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             let viewModel = FileGridViewModel(folder: viewModel.currentUser.rootFolder, repository: viewModel.repository)
             AsyncLoadableView(viewModel: viewModel) {

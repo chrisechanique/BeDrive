@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
-import APIClient
-import FileRepository
+import NavigationRouter
 
 @main
 struct BeDriveApp: App {
     var body: some Scene {
         WindowGroup {
-            AppRootView(router: BeDriveAppRouter())
+            AppRouterView(router: BeDriveAppRouter())
         }
     }
 }

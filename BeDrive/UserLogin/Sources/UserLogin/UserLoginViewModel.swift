@@ -1,15 +1,16 @@
 //
-//  LoginViewModel.swift
+//  UserLoginViewModel.swift
 //  BeRealFileApp
 //
 //  Created by Chris Echanique on 15/11/23.
 //
 
 import Foundation
-import FileRepository
+import Authentication
 import FileModels
+import NavigationRouter
 
-class LoginViewModel: ObservableObject {
+public class UserLoginViewModel: ObservableObject {
     enum LoginState: Equatable {
         case normal
         case loading
@@ -30,13 +31,12 @@ class LoginViewModel: ObservableObject {
         }
     }
     @Published var loginState = LoginState.normal
-    @Published var loggedInUser: User?
     @Published var loginDisabled = false
     
     let authentication: Authentication
     let router: any Routing
 
-    init(authentication: Authentication, router: any Routing) {
+    public init(authentication: Authentication, router: any Routing) {
         self.authentication = authentication
         self.router = router
     }
@@ -48,9 +48,7 @@ class LoginViewModel: ObservableObject {
         do {
             try await Task.sleep(nanoseconds: 500_000_000)
             let user = try await authentication.login(with: userName, password: password)
-            loggedInUser = user
             router.destination = .fileHome(user: user)
-            router.isLoggedIn = true
             loginState = .loggedIn
         } catch {
             loginState = .error(message: error.localizedDescription)

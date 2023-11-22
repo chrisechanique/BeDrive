@@ -4,30 +4,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "FileRepository",
+    name: "UserLogin",
     platforms: [
-      // Only add support for iOS 15 and up.
-      .iOS(.v15)
+      // Only add support for iOS 16 and up.
+      .iOS(.v16)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "FileRepository",
-            targets: ["FileRepository"]),
+            name: "UserLogin",
+            targets: ["UserLogin"]),
     ],
     dependencies: [
-        .package(name: "DataCache", path: "../DataCache"),
-        .package(name: "FileCache", path: "../FileCache"),
-        .package(name: "FileModels", path: "../FileModels")
+        .package(name: "APIClient", path: "../APIClient"),
+        .package(name: "Authentication", path: "../Authentication"),
+        .package(name: "FileModels", path: "../FileModels"),
+        .package(name: "NavigationRouter", path: "../NavigationRouter")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "FileRepository",
-            dependencies: ["DataCache", "FileCache", "FileModels"]),
+            name: "UserLogin",
+            dependencies: ["APIClient", "Authentication", "FileModels", "NavigationRouter"]
+        ),
         .testTarget(
-            name: "FileRepositoryTests",
-            dependencies: ["FileRepository"]),
+            name: "UserLoginTests",
+            dependencies: ["UserLogin"]),
     ]
 )

@@ -8,6 +8,7 @@
 import SwiftUI
 import FileModels
 import FileRepository
+import NavigationRouter
 
 struct UserActionsButton<Router>: View where Router: Routing {
     @EnvironmentObject var router: Router
@@ -23,7 +24,7 @@ struct UserActionsButton<Router>: View where Router: Routing {
         }) {
             ZStack {
                 Circle()
-                    .fill(Color.accent)
+                    .fill(Color.accentColor)
                     .frame(width: 32, height: 32)
                 
                 Text(viewModel.iconLetter)

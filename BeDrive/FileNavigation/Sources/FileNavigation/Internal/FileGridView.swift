@@ -10,6 +10,7 @@ import AsyncView
 import APIClient
 import FileModels
 import FileRepository
+import NavigationRouter
 
 struct FileGridView: View {
     @EnvironmentObject var fileNavViewModel: FileNavigationViewModel
@@ -134,8 +135,6 @@ extension FileGridViewModel {
     }
 }
 
-
-
 // MARK: SwiftUI Preview
 
 #Preview {
@@ -143,5 +142,5 @@ extension FileGridViewModel {
     let user = User(firstName: "noel", lastName: "smith", userName: "noel", password: "foobar", rootFolder: folder)
     let viewModel = FileNavigationViewModel(currentUser: user, repository: BeDriveRepository(user: user, apiClient: BaseAPIClient()))
     
-    return FileNavigationView<BeDriveAppRouter>(viewModel: viewModel)
+    return FileNavigationView<SimpleRouter>(viewModel: viewModel)
 }

@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+// FileCell: Displays a file or folder item with an associated view model.
+// The view includes an icon, file/folder name, modification date, and size (if applicable).
+// Utilizes the FileCellViewModel to populate and format the displayed information.
+
 struct FileCell: View {
     enum Icon: String {
         case folder = "folder"

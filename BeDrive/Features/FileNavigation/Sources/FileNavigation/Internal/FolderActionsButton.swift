@@ -9,6 +9,9 @@ import SwiftUI
 import FileModels
 import FileRepository
 
+// FolderActionsButton: A button for triggering folder-related actions, such as creating a new folder or uploading a file, utilizing an action sheet.
+// Uses FolderActionsViewModel to manage state and actions.
+
 struct FolderActionsButton: View {
     @StateObject var viewModel: FolderActionsViewModel
     

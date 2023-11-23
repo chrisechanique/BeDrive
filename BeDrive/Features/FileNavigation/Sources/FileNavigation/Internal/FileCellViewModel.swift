@@ -8,6 +8,9 @@
 import Foundation
 import FileModels
 
+// FileCellViewModel: Manages the presentation logic for file and folder items.]
+// Calculates and formats essential information like file/folder name, icon, modification date, and size.
+
 class FileCellViewModel: ObservableObject {
     enum Icon: String {
         case folder = "folder.fill"

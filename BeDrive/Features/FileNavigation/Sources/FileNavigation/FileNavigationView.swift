@@ -11,6 +11,9 @@ import FileModels
 import FileRepository
 import NavigationRouter
 
+// FileNavigationView: A SwiftUI view for navigating through the file system.
+// Displays the file grid view and user actions button in the navigation bar.
+
 public struct FileNavigationView<Router>: View where Router: Routing {
     @StateObject var viewModel: FileNavigationViewModel
     

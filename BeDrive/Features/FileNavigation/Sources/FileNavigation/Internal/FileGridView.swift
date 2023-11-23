@@ -12,6 +12,11 @@ import FileModels
 import FileRepository
 import NavigationRouter
 
+// FileGridView: Displays a grid of file and folder items in a scrollable view.
+// Relies on the FileGridViewModel to manage the underlying data and interacts with the repository for file operations.
+// Uses an AsyncLoadableView to handle loading and error states when fetching file items.
+// Provides functionality for deleting files with the deleteButton method.
+
 struct FileGridView: View {
     @EnvironmentObject var fileNavViewModel: FileNavigationViewModel
     

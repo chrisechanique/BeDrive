@@ -10,6 +10,8 @@ import APIClient
 import Authentication
 import NavigationRouter
 
+// UserLoginView: SwiftUI view for user login. Displays a login form with username, password inputs, and a sign-in button.
+
 public struct UserLoginView<Router>: View where Router: Routing {
     @StateObject var viewModel: UserLoginViewModel
     @EnvironmentObject var router: Router

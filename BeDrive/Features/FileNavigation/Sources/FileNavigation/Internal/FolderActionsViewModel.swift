@@ -9,6 +9,9 @@ import Foundation
 import FileRepository
 import FileModels
 
+// FolderActionsViewModel: Manages state and actions related to folder operations.
+// Handles folder creation and file upload using FileRepository and responds to changes in selectedFileUrl to initiate file creation.
+
 class FolderActionsViewModel: ObservableObject {
     @MainActor @Published var showFolderActions = false
     @MainActor @Published var showDocumentPicker = false

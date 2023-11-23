@@ -10,6 +10,8 @@ import Authentication
 import FileModels
 import NavigationRouter
 
+// UserLoginViewModel: Manages the login state and authentication logic for the user.
+
 public class UserLoginViewModel: ObservableObject {
     enum LoginState: Equatable {
         case normal

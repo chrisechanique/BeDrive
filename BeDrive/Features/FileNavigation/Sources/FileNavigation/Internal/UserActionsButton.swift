@@ -10,6 +10,9 @@ import FileModels
 import FileRepository
 import NavigationRouter
 
+// UserActionsButton: Represents a button for user-specific actions such as logout.
+// Utilizes UserActionsViewModel to manage state and initiate actions.
+
 struct UserActionsButton<Router>: View where Router: Routing {
     @EnvironmentObject var router: Router
     @StateObject var viewModel: UserActionsViewModel

@@ -11,6 +11,12 @@ import FileCache
 import FileModels
 import FileRepository
 
+// FileGridViewModel: Manages the data for the FileGridView.
+// Conforms to the DataLoadable protocol for handling loading, error, and resolved states.
+// Tracks fileItems, dataState, and errorMessage as published properties for UI updates.
+// Utilizes repository methods for fetching, deleting, and subscribing to file updates.
+// Implements load() to fetch files, subscribeToFileUpdates() for real-time updates, and delete() for file deletion.
+
 class FileGridViewModel: ObservableObject, DataLoadable {
     @MainActor @Published var fileItems: [any FileItem] = []
     @MainActor @Published var dataState: DataLoadingState = .empty(message: nil)

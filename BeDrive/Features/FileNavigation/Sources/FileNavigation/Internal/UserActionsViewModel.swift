@@ -8,6 +8,10 @@
 import Foundation
 import FileModels
 
+// UserActionsViewModel: Manages the user-specific actions state.
+// Tracks whether to present the user actions.
+// Provides user-related information, such as the user's full name and a formatted first letter.
+
 class UserActionsViewModel: ObservableObject {
     @MainActor @Published var showUserActions = false
     

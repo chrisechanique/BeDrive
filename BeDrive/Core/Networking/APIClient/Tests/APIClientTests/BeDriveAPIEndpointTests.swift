@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BeDriveAPIEndpointTests.swift
 //  
 //
 //  Created by Chris Echanique on 21/11/23.
@@ -129,7 +129,7 @@ class BeDriveAPIEndpointTests: XCTestCase {
         // Then
         XCTAssertEqual(path, "http://163.172.147.216:8080/items/item123")
         XCTAssertEqual(method, .DELETE)
-        XCTAssertEqual(headers, ["Content-Type": "application/json"])
+        XCTAssertNil(headers)
         XCTAssertNil(parameters)
         XCTAssertEqual(successCodes, [200, 201, 204])
         XCTAssertEqual(authorization, "Basic dGVzdFVzZXI6dGVzdFBhc3N3b3Jk")

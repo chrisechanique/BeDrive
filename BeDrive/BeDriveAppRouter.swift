@@ -15,8 +15,10 @@ import FileNavigation
 
 public class BeDriveAppRouter: Routing, ObservableObject {
     @Published public var destination: Destination = .login
+    
     private let authentication: Authentication = BeDriveAuthentication()
     private var repository: BeDriveRepository?
+    
     public func view(for destination: Destination) -> AnyView {
         switch destination {
         case .login:

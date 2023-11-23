@@ -20,7 +20,7 @@ struct FolderActionsButton: View {
         Button(action: {
             viewModel.showFolderActions = true
         }) {
-            Image(systemName: "folder.badge.plus")
+            Image(systemName: "plus")
         }
         .actionSheet(isPresented: $viewModel.showFolderActions) {
             // Present an action sheet with options
@@ -36,7 +36,7 @@ struct FolderActionsButton: View {
             }
         }
         .alert(isPresented: $viewModel.showAlert, content: {
-            Alert(title: Text(viewModel.errorMessage ?? ""))
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage ?? ""))
         })
     }
     

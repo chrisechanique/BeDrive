@@ -16,6 +16,7 @@ let package = Package(
             targets: ["FileRepository"]),
     ],
     dependencies: [
+        .package(name: "APIClient", path: "../APIClient"),
         .package(name: "DataCache", path: "../DataCache"),
         .package(name: "FileCache", path: "../FileCache"),
         .package(name: "FileModels", path: "../FileModels")
@@ -25,7 +26,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "FileRepository",
-            dependencies: ["DataCache", "FileCache", "FileModels"]),
+            dependencies: ["APIClient", "DataCache", "FileCache", "FileModels"]),
         .testTarget(
             name: "FileRepositoryTests",
             dependencies: ["FileRepository"]),

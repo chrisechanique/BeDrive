@@ -56,8 +56,10 @@ public enum BeDriveAPIEndpoint: APIEndpoint {
             return ["Content-Type": "application/octet-stream", "Content-Disposition": "attachment;filename*=utf-8''\(itemName)"]
         case .downloadItem:
             return ["Content-Type": "application/octet-stream"]
-        default:
+        case .currentUser, .listFolderContent, .createFolder:
             return ["Content-Type": "application/json"]
+        case .deleteItem:
+            return nil
         }
     }
     
@@ -177,6 +179,16 @@ public enum BeDriveAPIEndpoint: APIEndpoint {
             case contentType
         }
         
+        public init(id: String, parentId: String?, name: String, isDir: Bool, modificationDate: Date, size: Int?, contentType: ContentType?) {
+            self.id = id
+            self.parentId = parentId
+            self.name = name
+            self.isDir = isDir
+            self.modificationDate = modificationDate
+            self.size = size
+            self.contentType = contentType
+        }
+        
         public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             self.id = try container.decode(String.self, forKey: .id)
@@ -219,14 +231,14 @@ extension BeDriveAPIEndpoint.Credentials {
 // MARK: Network errors
 
 extension BeDriveAPIEndpoint {
-    enum NetworkError: Int, Error {
+    public enum NetworkError: Int, Error {
         case invalidNameOrDuplicate = 400
         case authenticationError = 403
         case itemNotFound = 404
         case noData
         case unknownError
         
-        var localizedDescription: String {
+        public var localizedDescription: String {
             switch self {
             case .authenticationError:
                 return "Authentication failed. Check your username and password."
@@ -235,13 +247,13 @@ extension BeDriveAPIEndpoint {
             case .invalidNameOrDuplicate:
                 return "Invalid name or an item with this name already exists."
             case .noData:
-                return "The item is not a file and has no data (it's a folder)."
+                return "The item is not a file and has no data."
             case .unknownError:
                 return "An unknown error occurred."
             }
         }
         
-        init(value: Int) {
+        public init(value: Int) {
             self = NetworkError(rawValue: value) ?? .unknownError
         }
     }

@@ -3,4 +3,167 @@
    uuid = "ABFBFAC5-A3EB-40A0-92DA-EBF52D34D182"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "data(for:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po request">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - de4bbc21020d714a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for APIClient.BaseAPIClient.downloadData(from: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - de4bbc21020d716b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for APIClient.BaseAPIClient.downloadData(from: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "356">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - 2147c82cb538e1a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for APIClient.BaseAPIClient.downloadData(from: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - 48af379aaafb16d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for APIClient.BaseAPIClient.downloadData(from: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - e7ea51e5997f516c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for APIClient.BaseAPIClient.downloadData(from: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - b70a049f7f17d69d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for APIClient.BaseAPIClient.data(for: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "356">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - 51d7424e8cb9110f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for APIClient.BaseAPIClient.data(for: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - 7f80c6033696e91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for APIClient.BaseAPIClient.data(for: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "14A48BBB-9194-41DA-8731-C4C0E9B58832 - 3e2f08056e83aa93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for APIClient.BaseAPIClient.data(for: APIClient.APIEndpoint) async throws -&gt; Foundation.Data"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/Networking/APIClient/Sources/APIClient/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -96,10 +96,10 @@ public struct UserLoginView<Router>: View where Router: Routing {
         switch viewModel.loginState {
         case .error(let message):
             Text(message)
-                .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.center)
                 .foregroundStyle(Color.red)
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.body)
+                .frame(maxWidth: .infinity, alignment: .center)
         default:
             nil
         }

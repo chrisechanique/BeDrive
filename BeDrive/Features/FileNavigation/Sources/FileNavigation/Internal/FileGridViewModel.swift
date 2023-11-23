@@ -17,7 +17,6 @@ class FileGridViewModel: ObservableObject, DataLoadable {
     @MainActor @Published var errorMessage: String? = nil
     let folder: Folder
     let repository: FileRepository
-    var fileCache: FileCache?
     
     init(folder: Folder, repository: FileRepository) {
         self.folder = folder
@@ -40,7 +39,9 @@ class FileGridViewModel: ObservableObject, DataLoadable {
             dataState = .loading(message: "Loading...")
         }
         do {
-            let _ = try await repository.fetchFiles(in: folder)
+            let files = try await repository.fetchFiles(in: folder)
+            fileItems = files
+            dataState = files.count == 0 ? .empty(message: "Folder is empty") : .resolved
         } catch {
             dataState = .error(message: error.localizedDescription)
         }
@@ -56,19 +57,5 @@ class FileGridViewModel: ObservableObject, DataLoadable {
         } catch {
             errorMessage = error.localizedDescription
         }
-    }
-}
-
-extension FileGridViewModel {
-    func didSelectFileURL(_ url: URL) async {
-        guard url.startAccessingSecurityScopedResource() else { return }
-        do {
-            let name = url.lastPathComponent
-            let data = try Data(contentsOf: url)
-            _ = try await repository.createDataItem(in: folder, name: name, data: data)
-        } catch {
-            print("Error reading file data: \(error)")
-        }
-        url.stopAccessingSecurityScopedResource()
     }
 }

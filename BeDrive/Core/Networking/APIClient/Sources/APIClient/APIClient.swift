@@ -10,7 +10,7 @@ import Foundation
 public protocol APIClient {
     func request<T: Decodable>(_ endpoint: APIEndpoint) async throws -> T
     func upload<T: Decodable>(_ data: Data, to endpoint: APIEndpoint) async throws -> T
-    func downloadData(from endpoint: APIEndpoint) async throws -> Data
+    func data(for endpoint: APIEndpoint) async throws -> Data
 }
 
 enum APIClientError: Error {
@@ -33,11 +33,11 @@ enum APIClientError: Error {
 public class BaseAPIClient: APIClient {
     public init() {}
 
-    public func downloadData(from endpoint: APIEndpoint) async throws -> Data {
+    public func data(for endpoint: APIEndpoint) async throws -> Data {
         guard let request = endpoint.urlRequest else {
             throw APIClientError.invalidURL
         }
-        
+
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIClientError.invalidResponse
@@ -51,7 +51,7 @@ public class BaseAPIClient: APIClient {
     }
     
     public func request<T: Decodable>(_ endpoint: APIEndpoint) async throws -> T {
-        let data = try await downloadData(from: endpoint)
+        let data = try await data(for: endpoint)
         let result = try endpoint.jsonDecoder.decode(T.self, from: data)
         return result
     }

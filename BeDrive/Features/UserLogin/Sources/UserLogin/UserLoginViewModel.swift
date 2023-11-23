@@ -51,7 +51,7 @@ public class UserLoginViewModel: ObservableObject {
             router.destination = .fileHome(user: user)
             loginState = .loggedIn
         } catch {
-            loginState = .error(message: error.localizedDescription)
+            loginState = .error(message: "Login failed. Please use a valid username and password.")
         }
     }
 }

@@ -38,7 +38,8 @@ class FolderActionsViewModel: ObservableObject {
             showFolderActions = false
         } catch {
             showAlert = true
-            errorMessage = error.localizedDescription
+            let repoError = error as? UserFriendlyDescribing
+            errorMessage = repoError?.userFriendlyDescription
         }
     }
     

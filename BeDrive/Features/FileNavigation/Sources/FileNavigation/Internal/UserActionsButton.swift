@@ -15,7 +15,7 @@ struct UserActionsButton<Router>: View where Router: Routing {
     @StateObject var viewModel: UserActionsViewModel
     
     init(user: User, repository: any FileRepository) {
-        _viewModel = StateObject(wrappedValue: UserActionsViewModel(user: user, repository: repository))
+        _viewModel = StateObject(wrappedValue: UserActionsViewModel(user: user))
     }
     
     var body: some View {
@@ -43,10 +43,6 @@ struct UserActionsButton<Router>: View where Router: Routing {
             buttons: [
                 .default(Text("Log out"), action: {
                     router.destination = .login
-                    Task {
-                        await viewModel.logout()
-                        router.destination = .login
-                    }
                 }),
                 .cancel()
             ]

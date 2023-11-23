@@ -11,24 +11,4 @@ import FileModels
 public enum Destination: Equatable {
     case login
     case fileHome(user: User)
-    
-    public static func ==(lhs: Destination, rhs:Destination) -> Bool {
-        switch lhs {
-        case .fileHome(let lhUser):
-            switch rhs {
-            case .fileHome(let rhUser):
-                return lhUser == rhUser
-            default:
-                return false
-            }
-        case .login:
-            switch rhs {
-            case .login:
-                return true
-            default:
-                return false
-            }
-        }
-        
-    }
 }

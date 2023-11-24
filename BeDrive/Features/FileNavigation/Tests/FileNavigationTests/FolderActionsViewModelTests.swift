@@ -72,36 +72,30 @@ final class FolderActionsViewModelTests: XCTestCase {
     }
     
     func testCreateFolder_SuccessfulCreation() async throws {
-        // Arrange
         let mockRepository = MockFileRepository()
         let mockFolder = Folder(id: "1", name: "TestFolder", modificationDate: Date(), parentId: nil)
         let viewModel = FolderActionsViewModel(folder: mockFolder, repository: mockRepository)
 
-        // Act
         await viewModel.createFolder(with: "NewFolder")
         let showFolderActions = await viewModel.showFolderActions
         let showAlert = await viewModel.showAlert
         let errorMessage = await viewModel.errorMessage
 
-        // Assert
         XCTAssertFalse(showFolderActions)
         XCTAssertFalse(showAlert)
         XCTAssertNil(errorMessage)
     }
 
     func testCreateFolder_FailedCreation() async throws {
-        // Arrange
         let mockRepository = MockFailingFileRepository()
         let folder = Folder(id: "1", name: "TestFolder", modificationDate: Date(), parentId: nil)
         let viewModel = FolderActionsViewModel(folder: folder, repository: mockRepository)
 
-        // Act
         await viewModel.createFolder(with: "NewFolder")
         let showFolderActions = await viewModel.showFolderActions
         let showAlert = await viewModel.showAlert
         let errorMessage = await viewModel.errorMessage
 
-        // Assert
         XCTAssertFalse(showFolderActions)
         XCTAssertTrue(showAlert)
         XCTAssertEqual(errorMessage, MockRepositoryError.defaultError.localizedDescription)

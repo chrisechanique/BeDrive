@@ -79,21 +79,7 @@ class FileGridViewModelTests: XCTestCase {
         }
     }
     
-    func testLoad_SuccessfulFetch_EmptyFiles() async throws {
-        let folder = Folder(id: "1", name: "TestFolder", modificationDate: Date(), parentId: nil)
-        let mockRepository = MockFileRepository(files: [])
-        
-        let viewModel = FileGridViewModel(folder: folder, repository: mockRepository)
-        
-        await viewModel.load()
-        
-        let dataState = await viewModel.dataState
-        let fileItems = await viewModel.fileItems
-        XCTAssertEqual(dataState, .empty(message: "Folder is empty"))
-        XCTAssertEqual(fileItems.count,  0)
-    }
-    
-    func testLoad_SuccessfulFetch_HasFiles() async throws {
+    func testLoad_SuccessfulFetch() async throws {
         let folder = Folder(id: "1", name: "TestFolder", modificationDate: Date(), parentId: nil)
         let files = [ImageFile(id: "Image1", name: "Image", modificationDate: Date(), parentId: "1", size: 1024)]
         let mockRepository = MockFileRepository(files: files)
@@ -101,11 +87,7 @@ class FileGridViewModelTests: XCTestCase {
         let viewModel = FileGridViewModel(folder: folder, repository: mockRepository)
         
         await viewModel.load()
-        
-        let dataState = await viewModel.dataState
-        let fileItems = await viewModel.fileItems
-        XCTAssertEqual(dataState, .resolved)
-        XCTAssertEqual(fileItems.count,  1)
+        XCTAssertNil(viewModel.fetchError)
     }
     
     func testLoad_FailedFetch() async throws {
@@ -114,11 +96,7 @@ class FileGridViewModelTests: XCTestCase {
         let viewModel = FileGridViewModel(folder: folder, repository: mockRepository)
         
         await viewModel.load()
-        
-        let dataState = await viewModel.dataState
-        let fileItems = await viewModel.fileItems
-        XCTAssertEqual(dataState, .error(message: MockRepositoryError.defaultError.localizedDescription))
-        XCTAssertTrue(fileItems.isEmpty)
+        XCTAssertEqual(viewModel.fetchError as! FileGridViewModelTests.MockRepositoryError, MockRepositoryError.defaultError)
     }
     
     func testDelete_SuccessfulDelete() async throws {

@@ -48,9 +48,7 @@ These Swift development choices collectively contribute to a modern, maintainabl
 
 ## Project Structure
 
-The BeDrive project is organized into several key components, each serving a specific purpose in the application's architecture. Understanding the project structure is essential for developers contributing to or extending the functionality of BeDrive.
-
-![Alt Text](/Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/BeDriveAppDiagram.png)
+The BeDrive project is organized into several key components, each serving a specific purpose in the application's architecture. Please refer to app diagram (BeDriveAppDiagram) in Media folder.
 
 ### 1. **APIClient**
 

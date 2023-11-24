@@ -58,13 +58,13 @@ class FileGridViewModel: ObservableObject, DataLoadable {
     
     @MainActor
     func load() async {
+        Task {
+            await subscribeToFileUpdates()
+        }
         do {
             _ = try await repository.fetchFiles(in: folder)
         } catch {
             fetchError = error
-        }
-        Task {
-            await subscribeToFileUpdates()
         }
     }
     

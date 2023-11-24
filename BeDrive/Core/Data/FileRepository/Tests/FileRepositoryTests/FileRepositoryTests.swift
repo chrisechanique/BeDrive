@@ -42,8 +42,10 @@ enum MockData {
         let rootFolder = Folder(id: "1", name: "Folder 1", modificationDate: Date(), parentId: nil)
         return User(firstName: "Beyonce", lastName: "Knowles", userName: "bey", password: "yonce", rootFolder: rootFolder)
     }()
+}
 
-    static let mockError = BeDriveAPIEndpoint.NetworkError.unknownError
+enum MockError : Error {
+    case genericError
 }
 
 
@@ -61,14 +63,14 @@ class BeDriveRepositoryTests: XCTestCase {
     }
 
     func testFetchFilesFailure() async {
-        let apiClient = MockAPIClient(result: .failure(MockData.mockError))
+        let apiClient = MockAPIClient(result: .failure(MockError.genericError))
         let repository = BeDriveRepository(user: MockData.mockUser, apiClient: apiClient)
 
         do {
             _ = try await repository.fetchFiles(in: MockData.mockFolder)
             XCTFail("Expected an error but the call succeeded.")
-        } catch let error as RepositoryError {
-            XCTAssertEqual(error, RepositoryError.unknownError)
+        } catch let error as MockError {
+            XCTAssertEqual(error, MockError.genericError)
         } catch {
             XCTFail("Unexpected error: \(error)")
         }
@@ -92,17 +94,17 @@ class BeDriveRepositoryTests: XCTestCase {
     }
 
     func testCreateFolderFailure() async {
-        let apiClient = MockAPIClient(result: .failure(MockData.mockError))
+        let apiClient = MockAPIClient(result: .failure(MockError.genericError))
         let repository = BeDriveRepository(user: MockData.mockUser, apiClient: apiClient)
 
         do {
             _ = try await repository.createFolder(named: "New Folder", in: MockData.mockFolder)
             XCTFail("Expected an error but the call succeeded.")
-        } catch let error as RepositoryError {
+        } catch let error as MockError {
             // Check if folder is not in file cache
             let files = await repository.getFileCache(for: MockData.mockFolder).files
             XCTAssertEqual(files.count, 0)
-            XCTAssertEqual(error, RepositoryError.unknownError)
+            XCTAssertEqual(error, MockError.genericError)
         } catch {
             XCTFail("Unexpected error: \(error)")
         }

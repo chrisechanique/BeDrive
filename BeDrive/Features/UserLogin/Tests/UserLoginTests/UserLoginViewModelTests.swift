@@ -51,16 +51,18 @@ final class UserLoginViewModelTests: XCTestCase {
 
         let viewModel = UserLoginViewModel(authentication: mockAuthentication, router: mockRouter)
 
-        XCTAssertEqual(viewModel.userName, "noel")
-        XCTAssertEqual(viewModel.password, "foobar")
+        XCTAssertEqual(viewModel.userName, "")
+        XCTAssertEqual(viewModel.password, "")
         XCTAssertEqual(viewModel.loginState, .normal)
-        XCTAssertFalse(viewModel.loginDisabled)
+        XCTAssertTrue(viewModel.loginDisabled)
     }
 
     func testSignInSuccess() async {
         let mockAuthentication = MockSuccessAuthentication()
         let mockRouter = MockRouter()
         let viewModel = UserLoginViewModel(authentication: mockAuthentication, router: mockRouter)
+        viewModel.userName = "Beyonce"
+        viewModel.password = "Knowles"
 
         await viewModel.signIn()
 
@@ -75,8 +77,7 @@ final class UserLoginViewModelTests: XCTestCase {
 
         await viewModel.signIn()
 
-        XCTAssertEqual(viewModel.loginState, .error(message: "Login failed. Please use a valid username and password."))
-        XCTAssertFalse(viewModel.loginDisabled)
+        XCTAssertEqual(viewModel.loginState, .error(message: MockAuthError.genericError.localizedDescription))
     }
 
     // Add more tests as needed

@@ -13,7 +13,7 @@ import FileRepository
 import UserLogin
 import FileNavigation
 
-// App level router that implements and injects concrete service classes (ie Authentication & FileRepository) for dependency injection
+// App level router that handles dependency injection of concrete service classes (ie Authentication & FileRepository)
 
 public class BeDriveAppRouter: Routing, ObservableObject {
     @Published public var destination: Destination = .login

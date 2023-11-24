@@ -118,24 +118,6 @@ public actor BeDriveRepository: FileRepository {
         await fileCache.delete(item)
         await dataCache.remove(for: item.id)
     }
-    /*
-    private func mapError(_ error: Error) -> RepositoryError {
-        guard let networkError = error as? BeDriveAPIEndpoint.NetworkError else {
-            return RepositoryError.unknownError
-        }
-        switch networkError {
-        case .invalidNameOrDuplicate:
-            return .duplicateName
-        case .authenticationError:
-            return .failedToAuthenticate
-        case .itemNotFound:
-            return .invalidFileItem
-        case .noData:
-            return .invalidFileItem
-        case .unknownError:
-            return RepositoryError.unknownError
-        }
-    }*/
 }
 
 extension BeDriveAPIEndpoint.Item {

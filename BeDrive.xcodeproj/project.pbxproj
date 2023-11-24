@@ -18,14 +18,12 @@
 		F31C89022B0E2E0C00F2785C /* FileNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = F31C89012B0E2E0C00F2785C /* FileNavigation */; };
 		F31C89052B0E2E1800F2785C /* UserLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F31C89042B0E2E1800F2785C /* UserLogin */; };
 		F31C89072B0F7A7F00F2785C /* README in Resources */ = {isa = PBXBuildFile; fileRef = F31C89062B0F7A7F00F2785C /* README */; };
-		F31C89092B0F914200F2785C /* BeDriveAppDiagram.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C89082B0F914200F2785C /* BeDriveAppDiagram.png */; };
 		F31C890D2B0F944F00F2785C /* BeDriveLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C890B2B0F944F00F2785C /* BeDriveLogin.png */; };
 		F31C890E2B0F944F00F2785C /* BeDriveHomeView.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C890C2B0F944F00F2785C /* BeDriveHomeView.png */; };
+		F31C89102B1123AD00F2785C /* VideoDemo.mov in Resources */ = {isa = PBXBuildFile; fileRef = F31C890F2B1123AD00F2785C /* VideoDemo.mov */; };
+		F31C89122B112CDC00F2785C /* BeDriveAppDiagram.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C89112B112CDC00F2785C /* BeDriveAppDiagram.png */; };
 		F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */; };
 		F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */; };
-		F37B48EE2B0BB6D300511BE5 /* BeDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */; };
-		F37B48F82B0BB6D300511BE5 /* BeDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */; };
-		F37B48FA2B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */; };
 		F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B49242B0BB72700511BE5 /* Assets.xcassets */; };
 		F37B49792B0E11D100511BE5 /* BeDriveAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B49782B0E11D100511BE5 /* BeDriveAppRouter.swift */; };
 /* End PBXBuildFile section */
@@ -49,17 +47,15 @@
 
 /* Begin PBXFileReference section */
 		F31C89062B0F7A7F00F2785C /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		F31C89082B0F914200F2785C /* BeDriveAppDiagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeDriveAppDiagram.png; sourceTree = "<group>"; };
 		F31C890B2B0F944F00F2785C /* BeDriveLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeDriveLogin.png; sourceTree = "<group>"; };
 		F31C890C2B0F944F00F2785C /* BeDriveHomeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeDriveHomeView.png; sourceTree = "<group>"; };
+		F31C890F2B1123AD00F2785C /* VideoDemo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = VideoDemo.mov; sourceTree = "<group>"; };
+		F31C89112B112CDC00F2785C /* BeDriveAppDiagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BeDriveAppDiagram.png; path = ../../../../../Desktop/BeDriveAppDiagram.png; sourceTree = "<group>"; };
 		F37B48D92B0BB6D200511BE5 /* BeDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveApp.swift; sourceTree = "<group>"; };
 		F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F37B48E92B0BB6D300511BE5 /* BeDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveTests.swift; sourceTree = "<group>"; };
 		F37B48F32B0BB6D300511BE5 /* BeDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveUITests.swift; sourceTree = "<group>"; };
-		F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F37B49242B0BB72700511BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F37B492D2B0BB84400511BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F37B49322B0BC24800511BE5 /* DataCache */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataCache; sourceTree = "<group>"; };
@@ -139,22 +135,21 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F31C890A2B0F942A00F2785C /* Screenshots */ = {
+		F31C890A2B0F942A00F2785C /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				F31C89082B0F914200F2785C /* BeDriveAppDiagram.png */,
+				F31C890F2B1123AD00F2785C /* VideoDemo.mov */,
+				F31C89112B112CDC00F2785C /* BeDriveAppDiagram.png */,
 				F31C890B2B0F944F00F2785C /* BeDriveLogin.png */,
 				F31C890C2B0F944F00F2785C /* BeDriveHomeView.png */,
 			);
-			path = Screenshots;
+			path = Media;
 			sourceTree = "<group>";
 		};
 		F37B48D02B0BB6D200511BE5 = {
 			isa = PBXGroup;
 			children = (
 				F37B48DB2B0BB6D200511BE5 /* BeDrive */,
-				F37B48EC2B0BB6D300511BE5 /* BeDriveTests */,
-				F37B48F62B0BB6D300511BE5 /* BeDriveUITests */,
 				F37B48DA2B0BB6D200511BE5 /* Products */,
 				F37B49432B0BFFAF00511BE5 /* Frameworks */,
 			);
@@ -178,7 +173,7 @@
 				F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */,
 				F37B49782B0E11D100511BE5 /* BeDriveAppRouter.swift */,
 				F37B492D2B0BB84400511BE5 /* Info.plist */,
-				F31C890A2B0F942A00F2785C /* Screenshots */,
+				F31C890A2B0F942A00F2785C /* Media */,
 				F37B49242B0BB72700511BE5 /* Assets.xcassets */,
 				F37B48E22B0BB6D300511BE5 /* Preview Content */,
 				F31C89062B0F7A7F00F2785C /* README */,
@@ -192,23 +187,6 @@
 				F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F37B48EC2B0BB6D300511BE5 /* BeDriveTests */ = {
-			isa = PBXGroup;
-			children = (
-				F37B48ED2B0BB6D300511BE5 /* BeDriveTests.swift */,
-			);
-			path = BeDriveTests;
-			sourceTree = "<group>";
-		};
-		F37B48F62B0BB6D300511BE5 /* BeDriveUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F37B48F72B0BB6D300511BE5 /* BeDriveUITests.swift */,
-				F37B48F92B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift */,
-			);
-			path = BeDriveUITests;
 			sourceTree = "<group>";
 		};
 		F37B49432B0BFFAF00511BE5 /* Frameworks */ = {
@@ -367,12 +345,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F31C89102B1123AD00F2785C /* VideoDemo.mov in Resources */,
 				F31C89072B0F7A7F00F2785C /* README in Resources */,
 				F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */,
 				F31C890D2B0F944F00F2785C /* BeDriveLogin.png in Resources */,
 				F31C890E2B0F944F00F2785C /* BeDriveHomeView.png in Resources */,
 				F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */,
-				F31C89092B0F914200F2785C /* BeDriveAppDiagram.png in Resources */,
+				F31C89122B112CDC00F2785C /* BeDriveAppDiagram.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37B48EE2B0BB6D300511BE5 /* BeDriveTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,8 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37B48FA2B0BB6D300511BE5 /* BeDriveUITestsLaunchTests.swift in Sources */,
-				F37B48F82B0BB6D300511BE5 /* BeDriveUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

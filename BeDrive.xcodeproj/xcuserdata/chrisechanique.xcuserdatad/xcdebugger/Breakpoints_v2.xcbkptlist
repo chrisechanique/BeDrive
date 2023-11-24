@@ -168,17 +168,299 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6587CED7-1B54-44F1-9B24-B68BC2A89749"
+            uuid = "D3F8B718-B9CA-417A-A712-9429D5A81A29"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeDrive/Features/UserLogin/Sources/UserLogin/UserLoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "signIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3F8B718-B9CA-417A-A712-9429D5A81A29 - 1048c9ef61c002df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for UserLogin.UserLoginViewModel.signIn() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Features/UserLogin/Sources/UserLogin/UserLoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "D3F8B718-B9CA-417A-A712-9429D5A81A29 - 8dc692f17d66e9d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for UserLogin.UserLoginViewModel.signIn() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Features/UserLogin/Sources/UserLogin/UserLoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "D3F8B718-B9CA-417A-A712-9429D5A81A29 - 95c5f935905b0d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for UserLogin.UserLoginViewModel.signIn() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Features/UserLogin/Sources/UserLogin/UserLoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "D3F8B718-B9CA-417A-A712-9429D5A81A29 - 94330cce8a2dbbde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for UserLogin.UserLoginViewModel.signIn() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Features/UserLogin/Sources/UserLogin/UserLoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0CC2246-8DD1-4447-9A72-5E4766EA9BE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeDrive/Core/Networking/APIClient/Sources/APIClient/BeDriveAPIEndpoint.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "init(value:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D297D97A-9207-435A-A894-E5190DE8BD68"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncLoadableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D297D97A-9207-435A-A894-E5190DE8BD68 - 6c71f4ab4a820b93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&#x3c4;_0_0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.progressViewStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ProgressViewStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer&gt;, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text)&gt;&gt;&gt;)&gt; in AsyncView.AsyncLoadableView.body.getter : some"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncLoadableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1828">
+               </Location>
+               <Location
+                  uuid = "D297D97A-9207-435A-A894-E5190DE8BD68 - 25918ada14a4f103"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&#x3c4;_0_0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.progressViewStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ProgressViewStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer&gt;, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text)&gt;&gt;&gt;)&gt; in AsyncView.AsyncLoadableView.body.getter : some"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncLoadableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FAF76B6-2257-4969-B365-8A54DE23BE0F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BeDrive/Features/FileNavigation/Sources/FileNavigation/Internal/FileGridViewModel.swift"
+            filePath = "BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncImageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0FAF76B6-2257-4969-B365-8A54DE23BE0F - b3013abedd74fa81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.scaledToFit() -&gt; some&gt;&gt;.0&gt; in AsyncView.AsyncImageView.body.getter : some"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "0FAF76B6-2257-4969-B365-8A54DE23BE0F - b3013abedd74fa81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.scaledToFit() -&gt; some&gt;&gt;.0&gt; in AsyncView.AsyncImageView.body.getter : some"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "0FAF76B6-2257-4969-B365-8A54DE23BE0F - b3013abedd74fa81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.scaledToFit() -&gt; some&gt;&gt;.0&gt; in AsyncView.AsyncImageView.body.getter : some"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "0FAF76B6-2257-4969-B365-8A54DE23BE0F - b3013abedd74fa81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.scaledToFit() -&gt; some&gt;&gt;.0&gt; in AsyncView.AsyncImageView.body.getter : some"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/Views/AsyncImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26C9F3BC-DF88-4941-BE0F-DADAE95C7512"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeDrive/Core/UI/AsyncView/Sources/AsyncView/ViewModels/AsyncLoadableViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "load()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "26C9F3BC-DF88-4941-BE0F-DADAE95C7512 - 82955eee2de9c884"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for AsyncView.AsyncLoadableViewModel.load() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/ViewModels/AsyncLoadableViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "26C9F3BC-DF88-4941-BE0F-DADAE95C7512 - 63599002914c9f97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for AsyncView.AsyncLoadableViewModel.load() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/ViewModels/AsyncLoadableViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "26C9F3BC-DF88-4941-BE0F-DADAE95C7512 - 31616cff87509a86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for AsyncView.AsyncLoadableViewModel.load() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/ViewModels/AsyncLoadableViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "26C9F3BC-DF88-4941-BE0F-DADAE95C7512 - 6e1b15f04a04c387"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for AsyncView.AsyncLoadableViewModel.load() async -&gt; ()"
+                  moduleName = "BeDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisechanique/Documents/GitHub/BeDrive/BeDrive/Core/UI/AsyncView/Sources/AsyncView/ViewModels/AsyncLoadableViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

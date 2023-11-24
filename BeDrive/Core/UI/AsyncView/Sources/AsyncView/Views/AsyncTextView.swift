@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct AsyncTextView: View {
-    private let viewModel: AsyncLoadableViewModel<String>
+    @StateObject var viewModel: AsyncLoadableViewModel<String>
 
     public init(loadTask: @escaping () async throws -> String) {
-        self.viewModel = AsyncLoadableViewModel(fetchData: loadTask)
+        _viewModel = StateObject(wrappedValue: AsyncLoadableViewModel(fetchData: loadTask))
     }
 
     public var body: some View {

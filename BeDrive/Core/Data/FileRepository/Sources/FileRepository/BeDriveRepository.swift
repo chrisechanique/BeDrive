@@ -49,30 +49,15 @@ public actor BeDriveRepository: FileRepository {
     }
     
     public func fetchFiles(in folder: Folder) async throws -> [any FileItem] {
-        do {
-            // Fetch item from server
-            let items = try await apiClient.request(BeDriveAPIEndpoint.listFolderContent(id: folder.id, credentials: credentials)) as [BeDriveAPIEndpoint.Item]
-            let files = items.compactMap { $0.mapToFilableItem() }
-            
-//            
-//            
-//            if (files.count > 0) {
-//                throw RepositoryError.invalidFileItem
-//            }
-//            
-//            
-//            
-            
-            
-            
-            // Add to file cache
-            let fileCache = await getFileCache(for: folder)
-            await fileCache.set(files)
-            fileCaches[folder.id] = fileCache
-            return files
-        } catch {
-            throw mapError(error)
-        }
+        // Fetch item from server
+        let items = try await apiClient.request(BeDriveAPIEndpoint.listFolderContent(id: folder.id, credentials: credentials)) as [BeDriveAPIEndpoint.Item]
+        let files = items.compactMap { $0.mapToFilableItem() }
+        
+        // Add to file cache
+        let fileCache = await getFileCache(for: folder)
+        await fileCache.set(files)
+        fileCaches[folder.id] = fileCache
+        return files
     }
     
     public func getFileCache(for folder: Folder) async -> FileCache {
@@ -85,17 +70,13 @@ public actor BeDriveRepository: FileRepository {
     }
     
     public func createFolder(named name: String, in parentFolder: Folder) async throws -> Folder {
-        do {
-            let item = try await apiClient.request(BeDriveAPIEndpoint.createFolder(id: parentFolder.id, folderName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
-            let newFolder = Folder(id: item.id, name: item.name, modificationDate: item.modificationDate, parentId: item.parentId)
-            
-            // Update store with new folder
-            let fileCache = await getFileCache(for: parentFolder)
-            await fileCache.add(newFolder)
-            return newFolder
-        } catch {
-            throw mapError(error)
-        }
+        let item = try await apiClient.request(BeDriveAPIEndpoint.createFolder(id: parentFolder.id, folderName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
+        let newFolder = Folder(id: item.id, name: item.name, modificationDate: item.modificationDate, parentId: item.parentId)
+        
+        // Update store with new folder
+        let fileCache = await getFileCache(for: parentFolder)
+        await fileCache.add(newFolder)
+        return newFolder
     }
     
     public func downloadData(for dataItem: any DataItem) async throws -> Data {
@@ -103,37 +84,25 @@ public actor BeDriveRepository: FileRepository {
             return data
         }
         
-        do {
-            let data = try await apiClient.data(for: BeDriveAPIEndpoint.downloadItem(id: dataItem.id, credentials: credentials))
-            await dataCache.store(data, for: dataItem.id)
-            return data
-        } catch {
-            throw mapError(error)
-        }
+        let data = try await apiClient.data(for: BeDriveAPIEndpoint.downloadItem(id: dataItem.id, credentials: credentials))
+        await dataCache.store(data, for: dataItem.id)
+        return data
     }
     
     public func createDataItem(in folder: Folder, name: String, data: Data) async throws -> any DataItem {
-        do {
-            let item = try await apiClient.upload(data, to: BeDriveAPIEndpoint.createItem(folderId: folder.id, itemName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
-            guard let dataItem = item.mapToFilableItem() as? any DataItem else {
-                throw RepositoryError.invalidFileItem
-            }
-            
-            // Update store with new file
-            let fileCache = await getFileCache(for: folder)
-            await fileCache.add(dataItem)
-            return dataItem
-        } catch {
-            throw mapError(error)
+        let item = try await apiClient.upload(data, to: BeDriveAPIEndpoint.createItem(folderId: folder.id, itemName: name, credentials: credentials)) as BeDriveAPIEndpoint.Item
+        guard let dataItem = item.mapToFilableItem() as? any DataItem else {
+            throw RepositoryError.invalidFileItem
         }
+        
+        // Update store with new file
+        let fileCache = await getFileCache(for: folder)
+        await fileCache.add(dataItem)
+        return dataItem
     }
     
     public func deleteItem(_ item: any FileItem) async throws {
-        do {
-            _ = try await apiClient.data(for: BeDriveAPIEndpoint.deleteItem(id: item.id, credentials: credentials))
-        } catch {
-            throw mapError(error)
-        }
+        _ = try await apiClient.data(for: BeDriveAPIEndpoint.deleteItem(id: item.id, credentials: credentials))
         
         // Delete file from store if it exists
         guard let parentId = item.parentId else {
@@ -149,7 +118,7 @@ public actor BeDriveRepository: FileRepository {
         await fileCache.delete(item)
         await dataCache.remove(for: item.id)
     }
-    
+    /*
     private func mapError(_ error: Error) -> RepositoryError {
         guard let networkError = error as? BeDriveAPIEndpoint.NetworkError else {
             return RepositoryError.unknownError
@@ -166,7 +135,7 @@ public actor BeDriveRepository: FileRepository {
         case .unknownError:
             return RepositoryError.unknownError
         }
-    }
+    }*/
 }
 
 extension BeDriveAPIEndpoint.Item {

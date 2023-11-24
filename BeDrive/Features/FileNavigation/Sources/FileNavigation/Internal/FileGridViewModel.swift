@@ -22,6 +22,8 @@ class FileGridViewModel: ObservableObject, DataLoadable {
     @MainActor @Published var dataState: DataLoadingState = .loading(message: "Loading...")
     @MainActor @Published var errorMessage: String? = nil
     @MainActor @Published var emptyFolderMessage: String?
+    var fetchError: Error?
+    
     let folder: Folder
     let repository: FileRepository
     
@@ -30,30 +32,36 @@ class FileGridViewModel: ObservableObject, DataLoadable {
         self.repository = repository
     }
     
+    // The file cache is the source of truth, so let's subscribe to updates
     func subscribeToFileUpdates() async {
         for await items in await repository.getFileCache(for: folder).$files.values {
             await MainActor.run(body: {
                 fileItems = items
-                
-                // Show message when folder is resolved with no items
-                if dataState == .resolved {
-                    emptyFolderMessage = items.count == 0 ? "Folder is empty" : nil
-                }
+                updateDataState()
             })
+        }
+    }
+    
+    @MainActor 
+    func updateDataState() {
+        if fileItems.count > 0 {
+            dataState = .resolved
+            emptyFolderMessage = nil
+        } else if let fetchError {
+            dataState = .error(message: fetchError.localizedDescription)
+            emptyFolderMessage = nil
+        } else {
+            dataState = .resolved
+            emptyFolderMessage = "Folder is empty"
         }
     }
     
     @MainActor
     func load() async {
         do {
-            fileItems = try await repository.fetchFiles(in: folder)
-            dataState = .resolved
-            emptyFolderMessage = fileItems.count == 0 ? "Folder is empty" : nil
+            _ = try await repository.fetchFiles(in: folder)
         } catch {
-            // Only show the error message if the view has never resolved the data
-            if dataState != .resolved {
-                dataState = .error(message: error.localizedDescription)
-            }
+            fetchError = error
         }
         Task {
             await subscribeToFileUpdates()

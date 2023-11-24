@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct AsyncImageView: View {
-    @ObservedObject var viewModel: AsyncLoadableViewModel<UIImage>
+    @StateObject var viewModel: AsyncLoadableViewModel<UIImage>
 
     public init(loadTask: @escaping () async throws -> UIImage) {
-        self.viewModel = AsyncLoadableViewModel(fetchData: loadTask)
+        _viewModel = StateObject(wrappedValue: AsyncLoadableViewModel(fetchData: loadTask))
     }
 
     public var body: some View {

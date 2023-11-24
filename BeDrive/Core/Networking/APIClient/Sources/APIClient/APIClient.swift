@@ -13,12 +13,12 @@ public protocol APIClient {
     func data(for endpoint: APIEndpoint) async throws -> Data
 }
 
-enum APIClientError: Error {
+enum APIClientError: LocalizedError {
     case unknownError
     case invalidURL
     case invalidResponse
     
-    var localizedDescription: String {
+    var errorDescription: String? {
         switch self {
         case .unknownError:
             return "An unknown error occurred."
@@ -37,7 +37,7 @@ public class BaseAPIClient: APIClient {
         guard let request = endpoint.urlRequest else {
             throw APIClientError.invalidURL
         }
-
+	
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIClientError.invalidResponse
@@ -51,6 +51,7 @@ public class BaseAPIClient: APIClient {
     }
     
     public func request<T: Decodable>(_ endpoint: APIEndpoint) async throws -> T {
+//        try await Task.sleep(nanoseconds: 1_500_000_000)
         let data = try await data(for: endpoint)
         let result = try endpoint.jsonDecoder.decode(T.self, from: data)
         return result

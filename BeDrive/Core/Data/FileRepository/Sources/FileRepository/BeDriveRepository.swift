@@ -11,18 +11,14 @@ import APIClient
 import FileModels
 import FileCache
 
-public protocol UserFriendlyDescribing {
-    var userFriendlyDescription: String { get }
-}
-
-public enum RepositoryError: Error, UserFriendlyDescribing {
+public enum RepositoryError: LocalizedError {
     case unknownError
     case failedToAuthenticate
     case duplicateName
     case invalidFileItem
     case missingFileCache
     
-    var localizedDescription: String {
+    public var errorDescription: String? {
         switch self {
         case .unknownError:
             return "An unknown error occurred."
@@ -35,10 +31,6 @@ public enum RepositoryError: Error, UserFriendlyDescribing {
         case .missingFileCache:
             return "File store is missing for file."
         }
-    }
-    
-    public var userFriendlyDescription: String {
-        return localizedDescription
     }
 }
 
@@ -61,6 +53,17 @@ public actor BeDriveRepository: FileRepository {
             // Fetch item from server
             let items = try await apiClient.request(BeDriveAPIEndpoint.listFolderContent(id: folder.id, credentials: credentials)) as [BeDriveAPIEndpoint.Item]
             let files = items.compactMap { $0.mapToFilableItem() }
+            
+//            
+//            
+//            if (files.count > 0) {
+//                throw RepositoryError.invalidFileItem
+//            }
+//            
+//            
+//            
+            
+            
             
             // Add to file cache
             let fileCache = await getFileCache(for: folder)

@@ -25,14 +25,6 @@ public struct AsyncLoadableView<ContentView, ViewModel>: View where ContentView:
         ZStack {
             contentView()
             switch viewModel.dataState {
-            case .empty(let message):
-                if let message {
-                    VStack {
-                        Text(message)
-                            .font(.largeTitle)
-                            .foregroundColor(Color.gray)
-                    }
-                }
             case .loading(let message):
                 ProgressView(message)
                     .progressViewStyle(CircularProgressViewStyle())

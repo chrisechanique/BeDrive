@@ -231,14 +231,14 @@ extension BeDriveAPIEndpoint.Credentials {
 // MARK: Network errors
 
 extension BeDriveAPIEndpoint {
-    public enum NetworkError: Int, Error {
+    public enum NetworkError: Int, LocalizedError {
         case invalidNameOrDuplicate = 400
-        case authenticationError = 403
+        case authenticationError = 401
         case itemNotFound = 404
         case noData
         case unknownError
         
-        public var localizedDescription: String {
+        public var errorDescription: String? {
             switch self {
             case .authenticationError:
                 return "Authentication failed. Check your username and password."

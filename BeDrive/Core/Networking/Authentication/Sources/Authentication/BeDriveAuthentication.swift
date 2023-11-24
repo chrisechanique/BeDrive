@@ -9,6 +9,10 @@ import Foundation
 import APIClient
 import FileModels
 
+enum AuthenticationError {
+    
+}
+
 public actor BeDriveAuthentication: Authentication {
     let apiClient: APIClient
     var loggedInUser: User?

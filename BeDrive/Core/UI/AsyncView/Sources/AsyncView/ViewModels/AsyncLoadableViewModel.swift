@@ -10,7 +10,7 @@ import Foundation
 // Generic view model that supports asynchronous data loading and updates its state accordingly.
 
 class AsyncLoadableViewModel<SomeData>: ObservableObject, DataLoadable {
-    @MainActor @Published public var dataState = DataLoadingState.empty(message: nil)
+    @MainActor @Published public var dataState = DataLoadingState.loading(message: "Loading...")
     @MainActor @Published public var data: SomeData?
     
     // Asynchronous function to fetch data.
@@ -24,9 +24,6 @@ class AsyncLoadableViewModel<SomeData>: ObservableObject, DataLoadable {
     // Initiates the data fetching process.
     @MainActor
     public func load() async {
-        if dataState != .resolved {
-            dataState = .loading(message: "Loading...")
-        }
         do {
             data = try await fetchData()
             dataState = .resolved

@@ -45,20 +45,28 @@ struct FileGridView: View {
                 }
             }
             .padding()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    FolderActionsButton(folder: viewModel.folder, repository: viewModel.repository)
-                }
-            }
         }
-        .navigationTitle(viewModel.folder.name)
-        .preferredColorScheme(.dark)
     }
     
     // Wrap content in loadable view object to handle loading and error states
     var body: some View {
         AsyncLoadableView(viewModel: viewModel) {
-            gridBody
+            if let emptyFolderMessage = viewModel.emptyFolderMessage {
+                VStack {
+                    Text(emptyFolderMessage)
+                        .font(.largeTitle)
+                        .foregroundColor(Color.gray)
+                }
+            } else {
+                gridBody
+            }
+        }
+        .navigationTitle(viewModel.folder.name)
+        .preferredColorScheme(.dark)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                FolderActionsButton(folder: viewModel.folder, repository: viewModel.repository)
+            }
         }
     }
 }

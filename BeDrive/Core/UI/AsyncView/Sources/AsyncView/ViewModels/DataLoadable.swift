@@ -9,7 +9,6 @@ import Foundation
 
 // Represents the state of data loading, including cases for different loading states and optional error messages.
 public enum DataLoadingState: Equatable {
-    case empty(message: String?)
     case loading(message: String)
     case resolved
     case error(message: String)

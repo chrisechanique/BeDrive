@@ -14,10 +14,8 @@ import XCTest
 final class FolderActionsViewModelTests: XCTestCase {
 
     // Mock classes for testing
-    enum MockRepositoryError: Error, UserFriendlyDescribing {
+    enum MockRepositoryError: Error {
         case defaultError
-        
-        var userFriendlyDescription: String { localizedDescription }
     }
     
     class MockFailingFileRepository: FileRepository {
@@ -106,6 +104,6 @@ final class FolderActionsViewModelTests: XCTestCase {
         // Assert
         XCTAssertFalse(showFolderActions)
         XCTAssertTrue(showAlert)
-        XCTAssertEqual(errorMessage, MockRepositoryError.defaultError.userFriendlyDescription)
+        XCTAssertEqual(errorMessage, MockRepositoryError.defaultError.localizedDescription)
     }
 }

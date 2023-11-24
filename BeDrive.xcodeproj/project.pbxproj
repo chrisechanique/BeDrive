@@ -21,7 +21,7 @@
 		F31C890D2B0F944F00F2785C /* BeDriveLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C890B2B0F944F00F2785C /* BeDriveLogin.png */; };
 		F31C890E2B0F944F00F2785C /* BeDriveHomeView.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C890C2B0F944F00F2785C /* BeDriveHomeView.png */; };
 		F31C89102B1123AD00F2785C /* VideoDemo.mov in Resources */ = {isa = PBXBuildFile; fileRef = F31C890F2B1123AD00F2785C /* VideoDemo.mov */; };
-		F31C89122B112CDC00F2785C /* BeDriveAppDiagram.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C89112B112CDC00F2785C /* BeDriveAppDiagram.png */; };
+		F31C89142B1132D200F2785C /* BeDriveAppDiagram.png in Resources */ = {isa = PBXBuildFile; fileRef = F31C89132B1132D200F2785C /* BeDriveAppDiagram.png */; };
 		F37B48DD2B0BB6D200511BE5 /* BeDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */; };
 		F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */; };
 		F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B49242B0BB72700511BE5 /* Assets.xcassets */; };
@@ -50,7 +50,7 @@
 		F31C890B2B0F944F00F2785C /* BeDriveLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeDriveLogin.png; sourceTree = "<group>"; };
 		F31C890C2B0F944F00F2785C /* BeDriveHomeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeDriveHomeView.png; sourceTree = "<group>"; };
 		F31C890F2B1123AD00F2785C /* VideoDemo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = VideoDemo.mov; sourceTree = "<group>"; };
-		F31C89112B112CDC00F2785C /* BeDriveAppDiagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BeDriveAppDiagram.png; path = ../../../../../Desktop/BeDriveAppDiagram.png; sourceTree = "<group>"; };
+		F31C89132B1132D200F2785C /* BeDriveAppDiagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeDriveAppDiagram.png; sourceTree = "<group>"; };
 		F37B48D92B0BB6D200511BE5 /* BeDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37B48DC2B0BB6D200511BE5 /* BeDriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeDriveApp.swift; sourceTree = "<group>"; };
 		F37B48E32B0BB6D300511BE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 		F31C890A2B0F942A00F2785C /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				F31C89132B1132D200F2785C /* BeDriveAppDiagram.png */,
 				F31C890F2B1123AD00F2785C /* VideoDemo.mov */,
-				F31C89112B112CDC00F2785C /* BeDriveAppDiagram.png */,
 				F31C890B2B0F944F00F2785C /* BeDriveLogin.png */,
 				F31C890C2B0F944F00F2785C /* BeDriveHomeView.png */,
 			);
@@ -347,11 +347,11 @@
 			files = (
 				F31C89102B1123AD00F2785C /* VideoDemo.mov in Resources */,
 				F31C89072B0F7A7F00F2785C /* README in Resources */,
+				F31C89142B1132D200F2785C /* BeDriveAppDiagram.png in Resources */,
 				F37B49252B0BB72700511BE5 /* Assets.xcassets in Resources */,
 				F31C890D2B0F944F00F2785C /* BeDriveLogin.png in Resources */,
 				F31C890E2B0F944F00F2785C /* BeDriveHomeView.png in Resources */,
 				F37B48E42B0BB6D300511BE5 /* Preview Assets.xcassets in Resources */,
-				F31C89122B112CDC00F2785C /* BeDriveAppDiagram.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

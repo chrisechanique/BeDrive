@@ -51,7 +51,6 @@ public class BaseAPIClient: APIClient {
     }
     
     public func request<T: Decodable>(_ endpoint: APIEndpoint) async throws -> T {
-        try await Task.sleep(nanoseconds: 1_000_000_000)
         let data = try await data(for: endpoint)
         let result = try endpoint.jsonDecoder.decode(T.self, from: data)
         return result

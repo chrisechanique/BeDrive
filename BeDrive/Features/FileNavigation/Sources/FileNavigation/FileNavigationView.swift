@@ -29,7 +29,7 @@ public struct FileNavigationView<Router>: View where Router: Routing {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    UserActionsButton<Router>(user: self.viewModel.currentUser, repository: viewModel.repository)
+                    UserActionsButton<Router>(user: self.viewModel.currentUser)
                 }
             }
         }

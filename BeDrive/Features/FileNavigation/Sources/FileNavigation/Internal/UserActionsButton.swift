@@ -17,7 +17,7 @@ struct UserActionsButton<Router>: View where Router: Routing {
     @EnvironmentObject var router: Router
     @StateObject var viewModel: UserActionsViewModel
     
-    init(user: User, repository: any FileRepository) {
+    init(user: User) {
         _viewModel = StateObject(wrappedValue: UserActionsViewModel(user: user))
     }
     

@@ -50,7 +50,7 @@ Swift's structured concurrency model is embraced for handling concurrent tasks i
 
 The BeDrive project is organized into several key components, each serving a specific purpose in the application's architecture. Understanding the project structure is essential for developers contributing to or extending the functionality of BeDrive.
 
-![Project Structure](./BeDriveAppDiagram.png)
+![Project Structure](https://github.com/chrisechanique/BeDrive/blob/main/BeDrive/Media/BeDriveAppDiagram.png)
 
 ### Components
 

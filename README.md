@@ -10,6 +10,12 @@ BeDrive is a SwiftUI-based iOS application for file management. It enables users
 - **Upload Images and Text Docs:** Easily add images and text documents to your file system.
 - **Delete Items:** Remove unwanted files or folders effortlessly by tapping and holding on a given item.
 
+## Demo
+
+Check out the [demo video](https://github.com/chrisechanique/BeDrive/blob/main/BeDrive/Media/VideoDemo.mov) to see BeDrive in action:
+
+[![Demo Video](https://github.com/chrisechanique/BeDrive/blob/main/BeDrive/Media/BeDriveHomeView.png)](https://github.com/chrisechanique/BeDrive/blob/main/BeDrive/Media/VideoDemo.mov)
+
 ## Swift Development Choices
 
 ### SwiftUI Framework
